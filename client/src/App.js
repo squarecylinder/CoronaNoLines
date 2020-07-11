@@ -13,7 +13,7 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path={["/", "home"]}>
+          <Route exact path={["/", "/home"]}>
             <Home />
           </Route>
           <Route exact path="/signup">
