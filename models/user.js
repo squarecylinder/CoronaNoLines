@@ -2,9 +2,14 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const businessProfileSchema = new Schema({
+const UserSchema = new Schema({
+    Consumer: {
+        type: Boolean,
+        default: true
+    },
+
     username: {
-        type: string,
+        type: String,
         trim: true,
         required: "Username is Required"
     },
@@ -23,23 +28,20 @@ const businessProfileSchema = new Schema({
     },
 
     companyName: {
-        type: string,
+        type: String,
         trim: true,
-        required: "Company Name is Required"
     },
 
 
     businessType: {
-        type: string,
+        type: String,
         trim: true,
-        required: "Business type is Required"
 
     },
 
     address: {
-        type: string,
+        type: String,
         trim: true,
-        required: "Address is Required"
 
     },
 
@@ -50,7 +52,7 @@ const businessProfileSchema = new Schema({
     },
 
     tables: {
-        type: number,
+        type: Number,
         min: 1
     },
 
@@ -86,6 +88,6 @@ const businessProfileSchema = new Schema({
 
 });
 
-const businessProfile = mongoose.model("profile", businessProfileSchema);
+const User = mongoose.model("profile", UserSchema);
 
-module.exports = businessProfile;
+module.exports = User;
