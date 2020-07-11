@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import SignUp from './pages/SignUp';
 // import 404 from './pages/404';
 // import Nav from './components/Nav'
 import './App.css';
@@ -12,7 +12,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path={["/", "/signup"]}>
-            <Signup />
+            <SignUp />
           </Route>
           <Route exact path="/login">
             <Login />
