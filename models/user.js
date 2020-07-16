@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
 const UserSchema = new Schema({
     consumer: {
         type: Boolean,
@@ -11,7 +10,8 @@ const UserSchema = new Schema({
     username: {
         type: String,
         trim: true,
-        required: "Username is Required"
+        required: "Username is Required",
+        unique: true
     },
 
     email: {
@@ -87,6 +87,10 @@ const UserSchema = new Schema({
     }
 
 });
+
+UserSchema.methods.validPassword = function(password) {
+    return password === this.password;
+}
 
 const User = mongoose.model("profile", UserSchema);
 

@@ -12,11 +12,27 @@ function SignUpInput() {
     const [dineIn, setDineIn] = useState();
     const [table, setTable] = useState();
     const [outsideDining, setOutsideDining] = useState();
+    const [takeOut, setTakeOut] = useState();
     const [driveThru, setDriveThru] = useState();
-    const [mask, setMask] = useState();
+    const [masks, setMasks] = useState();
 
-    function handleSignUpSubmit() {
-        API.PostSignUp(username, password, email, accountType, companyName, address, dineIn, table, outsideDining, driveThru, mask).then()
+    function handleSignUpSubmit(event) {
+        event.preventDefault();
+        console.log(username)
+        API.PostSignUp({
+            username: username, 
+            password: password, 
+            email: email, 
+            consumer: accountType, 
+            companyName: companyName, 
+            businessType: businessType,
+            address: address, 
+            dineIn: dineIn, 
+            tables: table, 
+            outsideDining: outsideDining, 
+            takeOut: takeOut,
+            driveThru: driveThru, 
+            masks: masks}).then(res => { console.log(res) })
     }
 
     return (
@@ -40,11 +56,12 @@ function SignUpInput() {
                 <div>
                     <label for="accountType">Choose an Account Type</label>
                     <select name="accountType" id="accountType" onChange={e => setAccountType(e.target.value)}>
-                        <option value="consumer">Consumer</option>
-                        <option value="business">Business</option>
+                        <option value="true"></option>
+                        <option value="true">Consumer</option>
+                        <option value="false">Business</option>
                     </select>
                 </div>
-                <div style={{ display: `${(accountType === "business") ? "block" : "none"}` }}>
+                <div style={{ display: `${(accountType === "false") ? "block" : "none"}` }}>
                     <div className="Form-group">
                         <label for="InputCompanyName">Company's Name</label>
                         <input type="input" className="form-control" id="InputCompanyName" onChange={e => setCompanyName(e.target.value)}></input>
@@ -78,8 +95,12 @@ function SignUpInput() {
                     <input type="input" placeholder="Enter true or false" className="form-control" id="InputDriveThru" onChange={e => setDriveThru(e.target.value)}></input>
                 </div>
                 <div className="Form-group">
+                    <label for="InputDriveThru">Take-Out</label>
+                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputDriveThru" onChange={e => setTakeOut(e.target.value)}></input>
+                </div>
+                <div className="Form-group">
                     <label for="InputMask">Masks</label>
-                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputMask" onChange={e => setMask(e.target.value)}></input>
+                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputMask" onChange={e => setMasks(e.target.value)}></input>
                 </div>
                     </div>
                 </div>

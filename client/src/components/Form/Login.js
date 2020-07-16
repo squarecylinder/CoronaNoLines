@@ -6,7 +6,7 @@ function LoginInput() {
     const [password, setPassword] = useState();
 
     function handleLoginSubmit() {
-        API.PostLogin(username, password).then()
+        API.PostLogin({username: username, password: password}).then(res => { console.log(res.data)})
     }
 
     return (
@@ -16,8 +16,8 @@ function LoginInput() {
             </div>
             <form onSubmit={handleLoginSubmit}>
                 <div className="Form-group">
-                    <label for="InputEmail">Email Address</label>
-                    <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
+                    <label for="InputEmail">Username</label>
+                    <input type="text" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
                 </div>
                 <div className="Form-group">
                     <label for="InputPassword">Password</label>
