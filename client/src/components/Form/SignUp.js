@@ -36,7 +36,9 @@ function SignUpInput() {
             driveThru: driveThru,
             curbside: curbside,
             open: open, 
-            masks: masks}).then(res => { console.log(res) })
+            masks: masks}).then(
+                alert(`Welcome ${username}`)
+            ).then(window.location = ("/home"))
     }
 
     return (
