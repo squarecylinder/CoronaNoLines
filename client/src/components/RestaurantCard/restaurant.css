@@ -1,0 +1,12 @@
+#restaurant-card {
+    margin-top: 10px;
+    }
+    
+    .restaurant-header {
+        background-color: rgb(243, 232, 229);
+    }
+
+    .restaurant-footer {
+        color: #777;
+        font-size: 10pt;
+    }
