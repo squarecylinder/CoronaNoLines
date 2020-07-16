@@ -80,6 +80,14 @@ const UserSchema = new Schema({
         default: false
 
     },
+    open: {
+        type: Boolean,
+        default: false
+    },
+    curbside: {
+        type: Boolean,
+        default: false
+    },
 
     userCreated: {
         type: Date,
