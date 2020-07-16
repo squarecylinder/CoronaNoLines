@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import AboutUs from './pages/AboutUs';
+import AccountPage from './pages/AccountPage';
 import NoMatch from './pages/404';
 import Nav from './components/Nav/Nav'
 
@@ -21,6 +23,12 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/aboutus">
+            <AboutUs />
+          </Route>
+          <Route exact path="/accountpage">
+            <AccountPage />
           </Route>
           <Route>
             <NoMatch />

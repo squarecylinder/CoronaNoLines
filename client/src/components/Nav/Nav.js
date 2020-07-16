@@ -16,7 +16,10 @@ function Nav() {
         <a class="nav-link" href="/signup"><span class="fas fa-user"></span> Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login"><span class="fas fa-sign-in-alt"></span> Login</a>
+        <a class="nav-link" href="/login"><span class="fas fa-sign-in"></span> Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/aboutus">AboutUs</a>
       </li>
     </ul>
   </nav>
