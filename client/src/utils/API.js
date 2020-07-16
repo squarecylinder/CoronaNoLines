@@ -1,12 +1,12 @@
-const { default: Axios } = require("axios");
+const axios = require("axios");
 
 export default {
 
 PostLogin:  (LoginData) => {
-return Axios.post("/api/login", LoginData)
+return axios.post("/api/login", LoginData)
 },
 
 PostSignUp: (SignData) => {
-    return Axios.post("/api/signup", SignData)
+    return axios.post("/api/signup", SignData)
 }
 }
