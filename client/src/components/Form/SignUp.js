@@ -92,10 +92,10 @@ function SignUpInput() {
                         <label for="businessType">Choose an Business Type</label>
                         <select name="businessType" id="businessType" onChange={e => setBusinessType(e.target.value)}>
                             <option value="retail">Retail</option>
-                            <option value="resturant">Resturant</option>
+                            <option value="restaurant">restaurantrestaurant</option>
                         </select>
                     </div>
-                    <div style={{ display: `${(businessType === "resturant") ? "block" : "none"}` }}>
+                    <div style={{ display: `${(businessType === "restaurant") ? "block" : "none"}` }}>
                         <div className="Form-group">
                             <label for="InputDineIn">Dine In</label>
                             <input type="input" placeholder="Enter true or false" className="form-control" id="InputDineIn" onChange={e => setDineIn(e.target.value)}></input>
