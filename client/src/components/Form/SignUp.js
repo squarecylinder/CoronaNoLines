@@ -15,6 +15,8 @@ function SignUpInput() {
     const [takeOut, setTakeOut] = useState();
     const [driveThru, setDriveThru] = useState();
     const [masks, setMasks] = useState();
+    const [open, setOpen] = useState();
+    const [curbside, setCurbside] = useState();
 
     function handleSignUpSubmit(event) {
         event.preventDefault();
@@ -31,8 +33,12 @@ function SignUpInput() {
             tables: table, 
             outsideDining: outsideDining, 
             takeOut: takeOut,
-            driveThru: driveThru, 
-            masks: masks}).then(res => { console.log(res) })
+            driveThru: driveThru,
+            curbside: curbside,
+            open: open, 
+            masks: masks}).then(
+                alert(`Welcome ${username}`)
+            ).then(window.location = ("/home"))
     }
 
     return (
@@ -70,14 +76,26 @@ function SignUpInput() {
                     <label for="InputAddress">Address</label>
                     <input type="input" className="form-control" id="InputAddress" onChange={e => setAddress(e.target.value)}></input>
                 </div>
+                <div className="Form-group">
+                    <label for="InputMask">Masks</label>
+                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputMasks" onChange={e => setMasks(e.target.value)}></input>
+                </div>
+                <div className="Form-group">
+                    <label for="InputMask">Curbside</label>
+                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputCurbside" onChange={e => setCurbside(e.target.value)}></input>
+                </div>
+                <div className="Form-group">
+                    <label for="InputMask">Are you Open?</label>
+                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputOpen" onChange={e => setOpen(e.target.value)}></input>
+                </div>
                     <div>
                         <label for="businessType">Choose an Business Type</label>
                         <select name="businessType" id="businessType" onChange={e => setBusinessType(e.target.value)}>
                             <option value="retail">Retail</option>
-                            <option value="resturant">Resturant</option>
+                            <option value="restaurant">restaurantrestaurant</option>
                         </select>
                     </div>
-                    <div style={{ display: `${(businessType === "resturant") ? "block" : "none"}` }}>
+                    <div style={{ display: `${(businessType === "restaurant") ? "block" : "none"}` }}>
                         <div className="Form-group">
                             <label for="InputDineIn">Dine In</label>
                             <input type="input" placeholder="Enter true or false" className="form-control" id="InputDineIn" onChange={e => setDineIn(e.target.value)}></input>
@@ -97,10 +115,6 @@ function SignUpInput() {
                 <div className="Form-group">
                     <label for="InputDriveThru">Take-Out</label>
                     <input type="input" placeholder="Enter true or false" className="form-control" id="InputDriveThru" onChange={e => setTakeOut(e.target.value)}></input>
-                </div>
-                <div className="Form-group">
-                    <label for="InputMask">Masks</label>
-                    <input type="input" placeholder="Enter true or false" className="form-control" id="InputMask" onChange={e => setMasks(e.target.value)}></input>
                 </div>
                     </div>
                 </div>
