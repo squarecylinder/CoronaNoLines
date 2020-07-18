@@ -22,7 +22,7 @@ function Home() {
                 <Restaurant />
                 <Restaurant />
              </div>
-             {/* <MapContainer /> */}
+             <MapContainer /> 
         </div>
     )
 }
