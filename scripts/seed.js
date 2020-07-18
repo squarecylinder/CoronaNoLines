@@ -6,13 +6,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectDatabase
 var userSeed = [
     {
     consumer: true,
-    username: "I'mASeeder",
+    username: "ImASeeder",
     email: "Seeder24@gmail.com",
     password: "SuperSeed",
     },
     {
         consumer: true,
-        username: "I'mASeeder2",
+        username: "ImASeeder2",
         email: "Seeder25@gmail.com",
         password: "SuperSeed2",
         companyName: "SeedCity",
@@ -21,11 +21,11 @@ var userSeed = [
     },
     {
         consumer: true,
-        username: "I'mASeeder2",
-        email: "Seeder25@gmail.com",
-        password: "SuperSeed2",
-        companyName: "SeedCity",
-        businessType: "resturant",
+        username: "ImASeeder3",
+        email: "Seeder23@gmail.com",
+        password: "SuperSeed3",
+        companyName: "Seed Town",
+        businessType: "restaurant",
         address: "54321 Seed Street",
         dineIn: true,
         tables: 5,
