@@ -6,7 +6,7 @@ router.get("/restaurant", (req, res) => {
         {businessType: "restaurant"}
         ).then(dbRestaurant => {
         res.json(dbRestaurant)
-        console.log(dbRestaurant)
+        // console.log(dbRestaurant)
     })
 });
 module.exports = router;

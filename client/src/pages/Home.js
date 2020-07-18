@@ -1,11 +1,10 @@
 import React, {useState, useEffect } from 'react';
-import MapContainer from '../components/Map/Map';
+// import MapContainer from '../components/Map/Map';
 import Retail from '../components/RetailCard/Retail'
 import Restaurant from '../components/RestaurantCard/Restaurant'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import API from '../utils/API';
 import HomeImg from '../components/HomeImg'
-import { set } from 'mongoose';
 
 
     
@@ -14,9 +13,16 @@ function Home(){
     const [restaurant, setRestaurant] = useState({});
     const [restaurants, setRestaurants] = useState([]);
     const [restaurantIndex, setRestaurantIndex] = useState(0);
+    const [retail, setRetail] = useState({});
+    const [retails, setRetails] = useState([]);
+    const [retailIndex, setRetailIndex] = useState(0);
     
      useEffect(() => {
         loadRestaurants();
+    }, []);
+
+    useEffect(() => {
+        loadRetail();
     }, []);
 
     function nextRestaurant(restaurantIndex) {
@@ -51,6 +57,40 @@ function Home(){
             setRestaurant(restaurants[0])
         }).catch(err => console.log(err));
     }
+
+
+    function nextRetail(retailIndex) {
+        if (retailIndex >= retails.length) {
+            retailIndex = 0;
+        }
+        setRetail(retails[retailIndex]);
+        setRetailIndex(retailIndex);
+    }
+
+    function previousRetail(retailIndex) {
+        if (retailIndex < 0) {
+            retailIndex = retails.length - 1;
+        }
+        setRetail(retails[retailIndex]);
+        setRetailIndex(retailIndex);
+    }
+    function handleRetailBtnClick(event) {
+        // Get the title of the clicked button
+        const btnName = event.target.getAttribute("data-value");
+        if (btnName === "next") {
+          const newRetailIndex = retailIndex + 1;
+          nextRetail(newRetailIndex);
+        } else {
+          const newRetailIndex = retailIndex - 1;
+          previousRetail(newRetailIndex);
+        }
+      }
+    function loadRetail() {
+        API.GetRetail().then(retails => {
+            setRetails(retails);
+            setRetail(retails[0])
+        }).catch(err => console.log(err));
+    }
     return (
 
         <div className="Container">
@@ -62,17 +102,23 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row">
-                <Retail />
-                <Retail />
-                <Retail />
+                <Retail companyName={retail.companyName}
+                    address={retail.address}
+                    open={retail.open}
+                    curbside={retail.curbside}
+                    masks={retail.masks}
+                    handleRetailBtnClick={retail.handleRetailBtnClick}
+                    userCreated={retail.userCreated}
+                />
+                {/* <Retail />
+                <Retail /> */}
                 <Restaurant companyName={restaurant.companyName}
                 address={restaurant.address}
                 dineIn={restaurant.dineIn} 
                 tables={restaurant.tables}
                 outsideDining={restaurant.outsideDining} 
                 takeOut={restaurant.takeOut} 
-                driveThru={restaurant.driveThru} 
-                curbside={restaurant.curbside} 
+                driveThru={restaurant.driveThru}
                 open={restaurant.open} 
                 masks={restaurant.masks}
                 userCreated={restaurant.userCreated}

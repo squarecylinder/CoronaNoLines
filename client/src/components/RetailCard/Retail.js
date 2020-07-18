@@ -2,23 +2,24 @@ import React from 'react';
 import './retail.css'
 
 //Need to dynamically inject fields from MongoDb
-function Retail() {
+function Retail({companyName, address, open, masks, curbside, handleRetailBtnClick, userCreated}) {
     return (
     <div className="col-4" id="retail-card">
 <div className="card">
-  <h5 className="card-header retail-header">Insert Retail Name Here.</h5>
+  <h5 className="card-header retail-header">{companyName}</h5>
   <div className="card-body">
       <div>
-          insert map here.
+      Address: {address}
       </div>
-    <h6>Insert Address Here.</h6>
-    <h6>Insert Open or Closed.</h6>
-    <h6>Insert Curbside.</h6>
-    <h6>Insert Masks.</h6>
+    <h6>Open: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6>Curbside: <i className={curbside ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6>Masks required: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <button onClick={handleRetailBtnClick} className="btn btn-info" data-value="back">Previous Retail Store</button>
+    <button onClick={handleRetailBtnClick} className="btn btn-success" data-value="next">Next Retail Store</button>
 
   </div>
   <div className="card-footer text-muted retail-footer">
-    Last updated: Insert "User Updated"
+    Last updated: Insert {userCreated}
   </div>
 </div>
 </div>
