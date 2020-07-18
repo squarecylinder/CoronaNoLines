@@ -12,6 +12,10 @@ function Retail() {
           insert map here.
       </div>
     <h6>Insert Address Here.</h6>
+    <h6>Insert Open or Closed.</h6>
+    <h6>Insert Curbside.</h6>
+    <h6>Insert Masks.</h6>
+
   </div>
   <div className="card-footer text-muted retail-footer">
     Last updated: Insert "User Updated"
