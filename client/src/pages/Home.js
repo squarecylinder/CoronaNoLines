@@ -107,7 +107,7 @@ function Home(){
                     open={retail.open}
                     curbside={retail.curbside}
                     masks={retail.masks}
-                    handleRetailBtnClick={retail.handleRetailBtnClick}
+                    handleRetailBtnClick={handleRetailBtnClick}
                     userCreated={retail.userCreated}
                 />
                 {/* <Retail />
