@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './restaurant.css'
 
 //Need to dynamically inject fields from MongoDb
@@ -11,7 +11,7 @@ function Restaurant() {
       <div>
           insert map here.
       </div>
-    <h6>Insert Address Here.</h6>
+    <h6></h6>
     <h6>Insert Dine-In.</h6>
     <h6>Insert Table Count.</h6>
     <h6>Insert Outside Dining.</h6>

@@ -1,18 +1,12 @@
 import React from 'react';
-import './jumbotron.css'
+import './jumbotron.css';
+
 
 function Jumbotron() {
   return (
-
-    <div className="col">
-    <div class="jumbotron" id="jumbotron-section">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
-  </div>
+    <div className="col" id="jumbotron-section">
+    <h2 className="jumbo-h2">Welcome!</h2>
+    <p className="jumbo-p">We live in a Covid-19 World, and getting the most up-to-date information is critical when making decisions.  Even when simply choosing where to shop or eat. Whether you are a business looking to keep your customers in the loop, or a customer wondering if your favorite store or restaurant is implimenting safe, social distance policies, our database gives you all the most important information.</p>
   </div>
 
 );
