@@ -4,6 +4,7 @@ import Retail from '../components/RetailCard/Retail'
 import Restaurant from '../components/RestaurantCard/Restaurant'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import API from '../utils/API';
+import HomeImg from '../components/HomeImg'
 
 
     
@@ -24,6 +25,10 @@ function Home(props){
     return (
 
         <div className="Container">
+            <div className="row">
+                <HomeImg />
+            </div>
+
             <div className="row">
             <Jumbotron />
             </div>

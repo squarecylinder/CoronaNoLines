@@ -1,3 +1,15 @@
 #jumbotron-section {
+    margin-top: 10px;
     margin-bottom: 0px;
+}
+
+.jumbo-h2 {
+    text-align: center;   
+}
+
+.jumbo-p {
+    font-size: 15px;
+    text-align: center;
+    padding-right: 100px;
+    padding-left: 100px;
 }
