@@ -30,4 +30,19 @@ GetRestaurant: () => {
          })
         })
     },
+GetRetail: () => {
+    return axios.get("/api/retail").then((res) => {
+        const retailStores = res.data;
+        return retailStores.map( retail => {
+            return {
+                address: retail.address,
+                companyName: retail.companyName,
+                open: retail.open,
+                curbside: retail.curbside,
+                masks: retail.masks,
+                userCreated: retail.userCreated
+                }
+            })
+        })
+    }
 }
