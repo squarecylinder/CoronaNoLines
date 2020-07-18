@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-// import MapContainer from '../components/Map/Map';
+import MapContainer from '../components/Map/Map';
 import Retail from '../components/RetailCard/Retail'
 import Restaurant from '../components/RestaurantCard/Restaurant'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
@@ -126,7 +126,7 @@ function Home(){
                 {/* <Restaurant />
                 <Restaurant /> */}
              </div>
-             {/* <MapContainer /> */}
+             <MapContainer /> 
         </div>
     )
 }

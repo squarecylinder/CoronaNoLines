@@ -25,7 +25,7 @@ var userSeed = [
         email: "Seeder23@gmail.com",
         password: "SuperSeed3",
         companyName: "Seed Town",
-        businessType: "resturant",
+        businessType: "restaurant",
         address: "54321 Seed Street",
         dineIn: true,
         tables: 5,
