@@ -10,6 +10,7 @@ import Nav from './components/Nav/Nav'
 import './App.css';
 import API from './utils/API';
 import RestaurantContext from './utils/RestaurantContext'
+import Footer from './components/Footer/Footer'
 const axios = require("axios");
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        <Footer />
       </div>
       </RestaurantContext.Provider>
     </Router>
