@@ -11,6 +11,23 @@ PostSignUp: (SignData) => {
     },
 
 GetRestaurant: () => {
-    return axios.get("/api/restaurant")
+    return axios.get("/api/restaurant").then((res) => {
+        const restaurants = res.data;
+        return restaurants.map( restaurant => {
+            return {
+                companyName: restaurant.companyName,
+                address: restaurant.address,
+                dineIn: restaurant.dineIn, 
+                tables: restaurant.tables,
+                outsideDining: restaurant.outsideDining, 
+                takeOut: restaurant.takeOut, 
+                driveThru: restaurant.driveThru, 
+                curbside: restaurant.curbside, 
+                open: restaurant.open, 
+                masks: restaurant.masks,
+                userCreated: restaurant.userCreated
+             }
+         })
+        })
     },
 }
