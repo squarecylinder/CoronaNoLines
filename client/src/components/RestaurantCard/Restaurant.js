@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './restaurant.css'
 
 //Need to dynamically inject fields from MongoDb
-function Restaurant(props) {
+function Restaurant() {
     return (
     <div className="col-4" id="restaurant-card">
 <div className="card">
@@ -11,7 +11,7 @@ function Restaurant(props) {
       <div>
           insert map here.
       </div>
-    <h6>{props.companyName}</h6>
+    <h6></h6>
     <h6>Insert Dine-In.</h6>
     <h6>Insert Table Count.</h6>
     <h6>Insert Outside Dining.</h6>
