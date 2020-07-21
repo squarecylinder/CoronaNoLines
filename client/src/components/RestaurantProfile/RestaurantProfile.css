@@ -1,0 +1,35 @@
+#rest-profile-section {
+    padding: 25px;
+    background-color: whitesmoke;
+}
+
+.profile-background {
+    background-color: white;
+}
+
+#profile-header {
+    padding: 5px;
+    background-color: #343a40;
+    color: white;
+}
+
+.rest-name {
+    padding-top: 5px;
+}
+
+.categories {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #343a40
+}
+
+.social-media {
+    margin-top: 8px;
+    color: #343a40
+  
+}
+
+.social-btn {
+    font-size: 12pt;
+}
+
