@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Restaurant from '../components/RestaurantCard/Restaurant';
 import Retail from '../components/RetailCard/Retail';
+import Profile from '../components/RestaurantProfile/RestaurantProfile'
 
 function AccountPage() {
     const [editing, setediting] = useState (false)
@@ -33,11 +34,14 @@ else{
 </div>
 }
     return (
-        <div>
-{
-    renderCard
-}
-        </div>
+      <div className="container">
+          <div>
+            <Profile />
+          </div>
+          <div>
+            {renderCard}
+          </div>
+      </div>
     )
 }
 export default AccountPage; 
