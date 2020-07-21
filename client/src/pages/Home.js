@@ -93,7 +93,7 @@ function Home(){
     }
     return (
 
-        <div className="Container">
+        <div className="container">
             <div className="row">
                 <HomeImg />
             </div>
