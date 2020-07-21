@@ -34,19 +34,14 @@ else{
 </div>
 }
     return (
-
-       
-        
-
-
-        <div className="container">
-             <div>
+      <div className="container">
+          <div>
             <Profile />
-        </div>
-{
-    renderCard
-}
-        </div>
+          </div>
+          <div>
+            {renderCard}
+          </div>
+      </div>
     )
 }
 export default AccountPage; 
