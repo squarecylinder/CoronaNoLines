@@ -11,7 +11,7 @@ var userSeed = [
     password: "SuperSeed",
     },
     {
-        consumer: true,
+        consumer: false,
         username: "ImASeeder2",
         email: "Seeder25@gmail.com",
         password: "SuperSeed2",
@@ -20,7 +20,7 @@ var userSeed = [
         businessType: "retail"
     },
     {
-        consumer: true,
+        consumer: false,
         username: "ImASeeder3",
         email: "Seeder23@gmail.com",
         password: "SuperSeed3",
