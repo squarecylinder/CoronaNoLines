@@ -53,6 +53,7 @@ function Home(){
       }
     function loadRestaurants() {
         API.GetRestaurant().then(restaurants => {
+            console.log (restaurants);
             setRestaurants(restaurants);
             setRestaurant(restaurants[0])
         }).catch(err => console.log(err));
@@ -91,6 +92,31 @@ function Home(){
             setRetail(retails[0])
         }).catch(err => console.log(err));
     }
+    let restaurantcard;
+    if(restaurant){
+        restaurantcard =  <Restaurant companyName={restaurant.companyName}
+        address={restaurant.address}
+        dineIn={restaurant.dineIn} 
+        tables={restaurant.tables}
+        outsideDining={restaurant.outsideDining} 
+        takeOut={restaurant.takeOut} 
+        driveThru={restaurant.driveThru}
+        open={restaurant.open} 
+        masks={restaurant.masks}
+        userCreated={restaurant.userCreated}
+        handleBtnClick={handleBtnClick} />              
+    }
+    let retailcard;
+    if(retail){
+        retailcard = <Retail companyName={retail.companyName}
+        address={retail.address}
+        open={retail.open}
+        curbside={retail.curbside}
+        masks={retail.masks}
+        handleRetailBtnClick={handleRetailBtnClick}
+        userCreated={retail.userCreated}
+    />
+    }
     return (
 
         <div>
@@ -102,6 +128,7 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row">
+<<<<<<< HEAD
                 <div className="col-2"></div>
                 <Retail companyName={retail.companyName}
                     address={retail.address}
@@ -111,19 +138,17 @@ function Home(){
                     handleRetailBtnClick={handleRetailBtnClick}
                     userCreated={retail.userCreated}
                 />
+=======
+                {
+                    retailcard
+                }    
+>>>>>>> da6307ed350cd3e26d2621c2814d32651f6e7140
                 {/* <Retail />
                 <Retail /> */}
-                <Restaurant companyName={restaurant.companyName}
-                address={restaurant.address}
-                dineIn={restaurant.dineIn} 
-                tables={restaurant.tables}
-                outsideDining={restaurant.outsideDining} 
-                takeOut={restaurant.takeOut} 
-                driveThru={restaurant.driveThru}
-                open={restaurant.open} 
-                masks={restaurant.masks}
-                userCreated={restaurant.userCreated}
-                handleBtnClick={handleBtnClick} />
+                {
+                 restaurantcard   
+                }
+
                 {/* <Restaurant />
                 <Restaurant /> */}
                 <div className="col-2"></div>
