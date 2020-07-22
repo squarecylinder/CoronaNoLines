@@ -123,12 +123,10 @@ function Home(){
             <div className="row">
                 <HomeImg />
             </div>
-
-            <div className="row">
+                <div className="row">
             <Jumbotron />
             </div>
             <div  className="row">
-<<<<<<< HEAD
                 <div className="col-2"></div>
                 <Retail companyName={retail.companyName}
                     address={retail.address}
@@ -138,11 +136,6 @@ function Home(){
                     handleRetailBtnClick={handleRetailBtnClick}
                     userCreated={retail.userCreated}
                 />
-=======
-                {
-                    retailcard
-                }    
->>>>>>> da6307ed350cd3e26d2621c2814d32651f6e7140
                 {/* <Retail />
                 <Retail /> */}
                 {
@@ -157,4 +150,4 @@ function Home(){
         </div>
     )
 }
-export default Home
+export default Home;
