@@ -6,12 +6,13 @@ function RestaurantProfile() {
     return (
         <div className="row" id="rest-profile-section">
             <div className="col-9 profile-background">
-            <div className="row" id="profile-header">
+            <div className="row" id="rest-profile-header">
                     <div className="col-5">
                         <h5 className="rest-name">Insert Restaurant Name</h5>
                     </div>
                     <div className="col-7">
-                    <button type="button" class="btn btn-danger btn-sm float-right">Edit Profile</button>
+                    <button type="button" class="btn btn-success btn-sm float-right save-btn">Save Profile</button>
+                    <button type="button" class="btn btn-danger btn-sm float-right edit-btn">Edit Profile</button>
                     </div>
                 </div>
                 <div className="row categories">
@@ -24,13 +25,13 @@ function RestaurantProfile() {
                         <hr></hr>
                         <h6>Company Name:</h6>
                         <hr></hr>
+                        <h6>Currently Opened:</h6>
+                        <hr></hr>
                         <h6>Address</h6>
                         <hr></hr>
                         <h6>Masks:</h6>
                         <hr></hr>
                         <h6>Curbside:</h6>
-                        <hr></hr>
-                        <h6>Currently Opened:</h6>
                         <hr></hr>
                         <h6>Dine In:</h6>
                         <hr></hr>
@@ -52,13 +53,13 @@ function RestaurantProfile() {
                         <hr></hr>
                         <h6>Insert Company Name</h6>
                         <hr></hr>
+                        <h6> Insert Currently Opened</h6>
+                        <hr></hr>
                         <h6>Insert Address</h6>
                         <hr></hr>
                         <h6>Insert Masks</h6>
                         <hr></hr>
                         <h6>Insert Curbside</h6>
-                        <hr></hr>
-                        <h6> Insert Currently Opened</h6>
                         <hr></hr>
                         <h6>Insert Dine In</h6>
                         <hr></hr>

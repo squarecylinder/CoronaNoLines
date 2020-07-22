@@ -93,7 +93,7 @@ function Home(){
     }
     return (
 
-        <div className="container">
+        <div>
             <div className="row">
                 <HomeImg />
             </div>
@@ -102,6 +102,7 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row">
+                <div className="col-2"></div>
                 <Retail companyName={retail.companyName}
                     address={retail.address}
                     open={retail.open}
@@ -125,6 +126,7 @@ function Home(){
                 handleBtnClick={handleBtnClick} />
                 {/* <Restaurant />
                 <Restaurant /> */}
+                <div className="col-2"></div>
              </div>
              <MapContainer /> 
         </div>
