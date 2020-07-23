@@ -58,10 +58,13 @@ function SignUpInput() {
             document.getElementById("open").removeAttribute("disabled")
         }
     }
-    function handleCheck() {
-        if(document.getElementById("driveThru").checked === true) {
-            return true
-        } return false
+    const handleOpen = (e) => {
+        setOpen(e.target.value)
+        disableClose()
+    }
+    const handleClose = (e) => {
+        setOpen("false")
+        disableOpen()
     }
     return (
         <div>
@@ -209,11 +212,11 @@ function SignUpInput() {
                     <label className="form-check-label" for="curbside">Curbside</label>
                 </div>
                 <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id="open" onClick={disableClose}/>
+                    <input className="form-check-input" type="checkbox" id="open" value="true" onClick={handleOpen}/>
                     <label className="form-check-label" for="open">Open</label>
                 </div>
                 <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id="closed" onClick={disableOpen}/>
+                    <input className="form-check-input" type="checkbox" id="closed" value="true" onClick={handleClose}/>
                     <label className="form-check-label" for="closed">Closed</label>
                 </div>
                 <hr/>
