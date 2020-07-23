@@ -14,7 +14,7 @@ function LoginInput() {
     return (
         <div>
             <div className="mt-4">
-                <h2>Login!</h2>
+                <h5>Login!</h5>
             </div>
             <form onSubmit={handleLoginSubmit}>
                 <div className="Form-group">
