@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import API from '../../utils/API'
 
 function SignUpInput() {
-    const [email, setEmail] = useState();
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [accountType, setAccountType] = useState();
@@ -26,8 +25,7 @@ function SignUpInput() {
         console.log(username)
         API.PostSignUp({
             username: username, 
-            password: password, 
-            email: email, 
+            password: password,  
             consumer: accountType, 
             companyName: companyName, 
             businessType: businessType,
@@ -203,11 +201,11 @@ function SignUpInput() {
                 </div> */}
                 <p className="font-weight-bold">Check all that apply:</p>
                 <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id="masks"/>
+                    <input className="form-check-input" type="checkbox" id="masks" value="true" onClick={e => setMasks(e.target.value)}/>
                     <label className="form-check-label" for="masks">Masks</label>
                 </div>
                 <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id="curbside"/>
+                    <input className="form-check-input" type="checkbox" id="curbside" value="true" onClick={e => setCurbside(e.target.value)}/>
                     <label className="form-check-label" for="curbside">Curbside</label>
                 </div>
                 <div className="form-check form-check-inline">
@@ -253,15 +251,19 @@ function SignUpInput() {
                 </div> */}
                         <p className="font-weight-bold">Check all that apply:</p>
                         <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="checkbox" id="dineIn"/>
+                            <input className="form-check-input" type="checkbox" id="inputTakeOut" value="true" onClick={e => setTakeOut(e.target.value)}/>   
+                            <label className="form-check-label" for="inputTakeOut">Take-Out</label>  
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="checkbox" id="dineIn" value="true" onClick={e => setDineIn(e.target.value)}/>
                             <label className="form-check-label" for="dineIn">Dine-In</label>
                         </div>
                         <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="checkbox" id="outsideDining"/>
+                            <input className="form-check-input" type="checkbox" id="outsideDining" value="true" onClick={e => setOutsideDining(e.target.value)}/>
                             <label className="form-check-label" for="outsideDining">Outside Dining</label>
                         </div>
                         <div className="form-check form-check-inline">
-                            <input className="form-check-input" type="checkbox" id="driveThru" onChange={e => setDriveThru(e.target.value)}/>
+                            <input className="form-check-input" type="checkbox" id="driveThru" value="true" onClick={e => setDriveThru(e.target.value)}/>
                             <label className="form-check-label" for="driveThru">Drive Thru</label>
                         </div>
                         <div className="form-row">
