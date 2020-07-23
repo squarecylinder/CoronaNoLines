@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/aboutus">
             <AboutUs />
           </Route>
-          <Route exact path="/accountpage">
+          <Route path="/accountpage/:id">
             <AccountPage />
           </Route>
           <Route>

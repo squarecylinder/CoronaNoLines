@@ -5,6 +5,7 @@ import Restaurant from '../components/RestaurantCard/Restaurant'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import API from '../utils/API';
 import HomeImg from '../components/HomeImg'
+import LoginCard from '../components/LoginCard/LoginCard'
 
 
     
@@ -119,18 +120,23 @@ function Home(){
     }
     return (
 
-        <div className="container">
+        <div>
             <div className="row">
                 <HomeImg />
             </div>
-
-            <div className="row">
+                <div className="row">
             <Jumbotron />
             </div>
-            <div  className="row">
-                {
-                    retailcard
-                }    
+            <div  className="row justify-content-center">
+                    <LoginCard />
+                <Retail companyName={retail.companyName}
+                    address={retail.address}
+                    open={retail.open}
+                    curbside={retail.curbside}
+                    masks={retail.masks}
+                    handleRetailBtnClick={handleRetailBtnClick}
+                    userCreated={retail.userCreated}
+                />
                 {/* <Retail />
                 <Retail /> */}
                 {
@@ -144,4 +150,4 @@ function Home(){
         </div>
     )
 }
-export default Home
+export default Home;

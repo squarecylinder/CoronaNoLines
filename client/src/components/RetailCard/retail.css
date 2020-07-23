@@ -1,12 +1,36 @@
 #retail-card {
 margin-top: 10px;
+margin-bottom: 10px;
 }
 
 .retail-header {
-    background-color: rgb(186, 219, 231);
+    background-color: #9dc2ce;
+    color: #343a40;
+
 }
 
 .retail-footer {
     color: #777;
     font-size: 10pt;
+}
+
+.card-list {
+    color: #343a40;
+}
+
+.scroll-btn-retail {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-btn {
+    margin-left:10px;
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-times {
+    color: red;
 }

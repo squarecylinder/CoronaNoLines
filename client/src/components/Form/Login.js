@@ -5,14 +5,16 @@ function LoginInput() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    function handleLoginSubmit() {
-        API.PostLogin({username: username, password: password}).then(res => { console.log(res.data)})
+    function handleLoginSubmit(event) {
+        event.preventDefault()
+        API.PostLogin({username: username, password: password}).then(alert ("You have been successfully logged in " + username))
+        .then(() => window.location = ('/accountpage/' + username))
     }
 
     return (
         <div>
             <div className="mt-4">
-                <h2>Login!</h2>
+                <h5>Login!</h5>
             </div>
             <form onSubmit={handleLoginSubmit}>
                 <div className="Form-group">

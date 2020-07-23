@@ -6,11 +6,17 @@ const LocalStrategy = require("passport-local").Strategy
 const DB = require ("./models")
 const app = express();
 const PORT = process.env.PORT || 3001;
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
+app.use(bodyParser());
 app.use(passport.initialize());
+app.use(session({ secret: 'can of redbull' }));
 app.use(passport.session());
 passport.serializeUser(function(user, done) {
   done(null, user.id);
