@@ -4,12 +4,14 @@
 }
 
 .jumbo-h2 {
-    text-align: center;   
+    text-align: center; 
+    color: #343a40;  
 }
 
 .jumbo-p {
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: 200px;
+    padding-left: 200px;
+    color: #777;
 }

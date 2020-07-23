@@ -1,4 +1,4 @@
-#rest-profile-section {
+#retail-profile-section {
     padding: 25px;
     background-color: whitesmoke;
 }
@@ -7,18 +7,23 @@
     background-color: white;
 }
 
-#rest-profile-header {
+#retail-profile-header {
     padding: 5px;
-    background-color: #364f6b;
-    color: white;
+    background-color: #9dc2ce;
 }
 
-.rest-name {
+.retail-name {
     padding-top: 5px;
+    color: #343a40
 }
 
 .edit-btn {
     margin-right: 10px;
+    margin-top: 3px;
+}
+
+.save-btn {
+    margin-top: 3px; 
 }
 
 .categories {
@@ -36,4 +41,3 @@
 .social-btn {
     font-size: 12pt;
 }
-

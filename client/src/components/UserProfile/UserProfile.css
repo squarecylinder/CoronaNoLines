@@ -1,4 +1,4 @@
-#rest-profile-section {
+#user-profile-section {
     padding: 25px;
     background-color: whitesmoke;
 }
@@ -7,18 +7,22 @@
     background-color: white;
 }
 
-#rest-profile-header {
+#profile-header {
     padding: 5px;
-    background-color: #364f6b;
+    background-color: #343a40;
     color: white;
 }
 
-.rest-name {
+.user-name {
     padding-top: 5px;
 }
 
 .edit-btn {
     margin-right: 10px;
+}
+
+.save-btn {
+    margin-top: 3px;
 }
 
 .categories {
@@ -36,4 +40,3 @@
 .social-btn {
     font-size: 12pt;
 }
-

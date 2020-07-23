@@ -1,12 +1,41 @@
 #restaurant-card {
     margin-top: 10px;
+    margin-bottom: 10px;
     }
     
     .restaurant-header {
-        background-color: rgb(243, 232, 229);
+        background-color: #364f6b;
+        color: white;
     }
 
     .restaurant-footer {
         color: #777;
         font-size: 10pt;
+    }
+
+    .card-list {
+        color: #343a40;
+    }
+
+    .scroll-btn {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 20px;
+    }
+
+    .next-btn {
+        margin-top: 0;
+        margin-left:10px;
+    }
+
+    .back-btn {
+            margin-top: 0;
+    }
+
+    .fa-check {
+        color: green;
+    }
+
+    .fa-times {
+        color: red;
     }
