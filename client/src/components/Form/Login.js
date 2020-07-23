@@ -5,8 +5,10 @@ function LoginInput() {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    function handleLoginSubmit() {
-        API.PostLogin({username: username, password: password}).then(res => { console.log(res.data)})
+    function handleLoginSubmit(event) {
+        event.preventDefault()
+        API.PostLogin({username: username, password: password}).then(alert ("You have been successfully logged in " + username))
+        .then(() => window.location = ('/accountpage/' + username))
     }
 
     return (
