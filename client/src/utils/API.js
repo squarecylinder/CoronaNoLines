@@ -3,12 +3,15 @@ const axios = require("axios");
 export default {
 
 PostLogin:  (LoginData) => {
-return axios.post("/api/login", LoginData)
+    return axios.post("/api/login", LoginData)
     },
 
 PostSignUp: (SignData) => {
     return axios.post("/api/signup", SignData)
     },
+SessionCheck: () => {
+    return axios.get('/api/sessioncheck')
+},
 
 GetRestaurant: () => {
     return axios.get("/api/restaurant").then((res) => {

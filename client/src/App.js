@@ -8,9 +8,10 @@ import AccountPage from './pages/AccountPage';
 import NoMatch from './pages/404';
 import Nav from './components/Nav/Nav'
 import './App.css';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
 
 function App() {
+
   return (
     <Router>
       <div>
@@ -26,10 +27,10 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/aboutus">
-            <AboutUs />
+            <AboutUs  />
           </Route>
           <Route path="/accountpage/:id">
-            <AccountPage />
+          <AccountPage  />
           </Route>
           <Route>
             <NoMatch />

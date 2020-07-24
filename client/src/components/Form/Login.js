@@ -7,7 +7,8 @@ function LoginInput() {
 
     function handleLoginSubmit(event) {
         event.preventDefault()
-        API.PostLogin({username: username, password: password}).then(alert ("You have been successfully logged in " + username))
+        API.PostLogin({username: username, password: password})
+        .then((data) => { console.log(data); alert ("You have been successfully logged in " + username)})
         .then(() => window.location = ('/accountpage/' + username))
     }
 

@@ -9,7 +9,7 @@ import LoginCard from '../components/LoginCard/LoginCard'
 
 
     
-//Need to iterate to dynamically generate new cards
+//Need to iterate to dynamically generate new Cards
 function Home(){
     const [restaurant, setRestaurant] = useState({});
     const [restaurants, setRestaurants] = useState([]);
@@ -17,10 +17,10 @@ function Home(){
     const [retail, setRetail] = useState({});
     const [retails, setRetails] = useState([]);
     const [retailIndex, setRetailIndex] = useState(0);
-    
+  
      useEffect(() => {
         loadRestaurants();
-    }, []);
+    }, []);    
 
     useEffect(() => {
         loadRetail();
@@ -93,9 +93,9 @@ function Home(){
             setRetail(retails[0])
         }).catch(err => console.log(err));
     }
-    let restaurantcard;
+    let restaurantCard;
     if(restaurant){
-        restaurantcard =  <Restaurant companyName={restaurant.companyName}
+        restaurantCard =  <Restaurant companyName={restaurant.companyName}
         address={restaurant.address}
         dineIn={restaurant.dineIn} 
         tables={restaurant.tables}
@@ -107,9 +107,9 @@ function Home(){
         userCreated={restaurant.userCreated}
         handleBtnClick={handleBtnClick} />              
     }
-    let retailcard;
+    let retailCard;
     if(retail){
-        retailcard = <Retail companyName={retail.companyName}
+        retailCard = <Retail companyName={retail.companyName}
         address={retail.address}
         open={retail.open}
         curbside={retail.curbside}
@@ -119,7 +119,6 @@ function Home(){
     />
     }
     return (
-
         <div>
             <div className="row">
                 <HomeImg />
@@ -129,20 +128,18 @@ function Home(){
             </div>
             <div  className="row justify-content-center">
                     <LoginCard />
-                <Retail companyName={retail.companyName}
+                {/* <Retail companyName={retail.companyName}
                     address={retail.address}
                     open={retail.open}
                     curbside={retail.curbside}
                     masks={retail.masks}
                     handleRetailBtnClick={handleRetailBtnClick}
                     userCreated={retail.userCreated}
-                />
+                /> */}
                 {/* <Retail />
                 <Retail /> */}
-                {
-                 restaurantcard   
-                }
-
+                {restaurantCard}
+                {retailCard}
                 {/* <Restaurant />
                 <Restaurant /> */}
              </div>
