@@ -8,9 +8,43 @@
         color: white;
     }
 
+    .email-input {
+        color: #343a40;
+        margin-bottom: 0;
+
+    }
+
+    .password-input {
+        color: #343a40;
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
     .login-footer {
         color: #777;
         font-size: 10pt;
+    }
+
+    .login-card-btn {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .create-card-btn {
+        margin-top: 10px;
+    }
+
+    .signup {
+        color: white
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: white
     }
 
  
