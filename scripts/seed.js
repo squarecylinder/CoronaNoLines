@@ -1,28 +1,28 @@
 var mongoose = require("mongoose");
 var db = require("../models");
+const moment = require("moment");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectDatabase");
 
 var userSeed = [
     {
     consumer: true,
-    username: "ImASeeder",
-    email: "Seeder24@gmail.com",
+    username: "Seeder24@gmail.com",
     password: "SuperSeed",
+    userCreated :  moment().format('MMMM Do YYYY')
     },
     {
         consumer: false,
-        username: "ImASeeder2",
-        email: "Seeder25@gmail.com",
+        username: "Seeder25@gmail.com",
         password: "SuperSeed2",
         companyName: "SeedCity",
         address: "12345 Seed Street",
-        businessType: "retail"
+        businessType: "retail",
+        userCreated :  moment().format('MMMM Do YYYY')
     },
     {
         consumer: false,
-        username: "ImASeeder3",
-        email: "Seeder23@gmail.com",
+        username: "Seeder23@gmail.com",
         password: "SuperSeed3",
         companyName: "Seed Town",
         businessType: "restaurant",
@@ -32,7 +32,8 @@ var userSeed = [
         outsideDining: false,
         takeOut: true,
         driveThru: true,
-        masks: true
+        masks: true,
+        userCreated :  moment().format('MMMM Do YYYY')
     }
 
 ];

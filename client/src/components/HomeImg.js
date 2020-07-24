@@ -1,5 +1,5 @@
 import React from 'react';
-import Dining from './Jumbotron/images/dining.jpg'
+import Dining from '../assets/images/dining.jpg'
 
 function HomeImg() {
   return (

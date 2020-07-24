@@ -1,6 +1,6 @@
 import React from 'react';
 import './UserProfile.css'
-import Logo from '../Jumbotron/images/logo-placeholder.jpg'
+import Logo from '../../assets/images/logo-placeholder.jpg'
 
 function UserProfile() {
     return (
@@ -29,7 +29,7 @@ function UserProfile() {
                         <hr></hr>
                         <h6>Insert Username</h6>
                         <hr></hr>
-                        <h6>Insert Password</h6>
+                        <h6>******</h6>
                     </div>
                 </div>
             </div>

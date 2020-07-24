@@ -19,7 +19,7 @@ function LoginInput() {
             </div>
             <form onSubmit={handleLoginSubmit}>
                 <div className="Form-group col-md-4">
-                    <label for="InputEmail">Username</label>
+                    <label for="InputEmail">Email</label>
                     <input type="text" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
                 </div>
                 <br/>

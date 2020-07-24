@@ -93,31 +93,31 @@ function Home(){
             setRetail(retails[0])
         }).catch(err => console.log(err));
     }
-    let restaurantCard;
-    if(restaurant){
-        restaurantCard =  <Restaurant companyName={restaurant.companyName}
-        address={restaurant.address}
-        dineIn={restaurant.dineIn} 
-        tables={restaurant.tables}
-        outsideDining={restaurant.outsideDining} 
-        takeOut={restaurant.takeOut} 
-        driveThru={restaurant.driveThru}
-        open={restaurant.open} 
-        masks={restaurant.masks}
-        userCreated={restaurant.userCreated}
-        handleBtnClick={handleBtnClick} />              
-    }
-    let retailCard;
-    if(retail){
-        retailCard = <Retail companyName={retail.companyName}
-        address={retail.address}
-        open={retail.open}
-        curbside={retail.curbside}
-        masks={retail.masks}
-        handleRetailBtnClick={handleRetailBtnClick}
-        userCreated={retail.userCreated}
-    />
-    }
+    // let restaurantCard;
+    // if(restaurant){
+    //     restaurantCard =  <Restaurant companyName={restaurant.companyName}
+    //     address={restaurant.address}
+    //     dineIn={restaurant.dineIn} 
+    //     tables={restaurant.tables}
+    //     outsideDining={restaurant.outsideDining} 
+    //     takeOut={restaurant.takeOut} 
+    //     driveThru={restaurant.driveThru}
+    //     open={restaurant.open} 
+    //     masks={restaurant.masks}
+    //     userCreated={restaurant.userCreated}
+    //     handleBtnClick={handleBtnClick} />              
+    // }
+    // let retailCard;
+    // if(retail){
+    //     retailCard = <Retail companyName={retail.companyName}
+    //     address={retail.address}
+    //     open={retail.open}
+    //     curbside={retail.curbside}
+    //     masks={retail.masks}
+    //     handleRetailBtnClick={handleRetailBtnClick}
+    //     userCreated={retail.userCreated}
+    // />
+    // }
     return (
         <div>
             <div className="row">
@@ -127,19 +127,29 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row justify-content-center">
-                    <LoginCard />
-                {/* <Retail companyName={retail.companyName}
-                    address={retail.address}
-                    open={retail.open}
-                    curbside={retail.curbside}
-                    masks={retail.masks}
-                    handleRetailBtnClick={handleRetailBtnClick}
-                    userCreated={retail.userCreated}
-                /> */}
+                <LoginCard />
+                <Retail companyName={retail.companyName}
+                address={retail.address}
+                open={retail.open}
+                curbside={retail.curbside}
+                masks={retail.masks}
+                handleRetailBtnClick={handleRetailBtnClick}
+                userCreated={retail.userCreated}
+                />
+                <Restaurant companyName={restaurant.companyName}
+                address={restaurant.address}
+                dineIn={restaurant.dineIn} 
+                tables={restaurant.tables}
+                outsideDining={restaurant.outsideDining} 
+                takeOut={restaurant.takeOut} 
+                driveThru={restaurant.driveThru}
+                open={restaurant.open} 
+                masks={restaurant.masks}
+                userCreated={restaurant.userCreated}
+                handleBtnClick={handleBtnClick} />  
                 {/* <Retail />
                 <Retail /> */}
-                {restaurantCard}
-                {retailCard}
+                {/* {restaurantCard} */}
                 {/* <Restaurant />
                 <Restaurant /> */}
              </div>
