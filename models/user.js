@@ -44,7 +44,21 @@ const UserSchema = new Schema({
         trim: true,
 
     },
+    city: {
+        type: String,
+        trim: true,
 
+    },
+    state: {
+        type: String,
+        trim: true,
+
+    },
+    zip: {
+        type: String,
+        trim: true,
+
+    },
     dineIn: {
         type: Boolean,
         default: false
