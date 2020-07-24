@@ -18,15 +18,19 @@ function LoginInput() {
                 <h5>Login!</h5>
             </div>
             <form onSubmit={handleLoginSubmit}>
-                <div className="Form-group">
+                <div className="Form-group col-md-4">
                     <label for="InputEmail">Username</label>
                     <input type="text" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
                 </div>
-                <div className="Form-group">
+                <br/>
+                <div className="Form-group col-md-4">
                     <label for="InputPassword">Password</label>
                     <input type="password" className="form-control" id="InputPassword" onChange={e => setPassword(e.target.value)}></input>
+                    <br/>
+                    <button type="submit" className="btn btn-primary">Login</button>
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                
+                
             </form>
         </div>
     )
