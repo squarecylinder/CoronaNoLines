@@ -39,7 +39,7 @@ function RetailProfile({email, password, companyName, open, address, city, state
 
                     </div>
                     <div className="col-9">
-                        <h6>{email}</h6>
+                        <input type="text" id="email" placeholder={email} disabled/>
                         <hr></hr>
                         <h6>******</h6>
                         <hr></hr>
