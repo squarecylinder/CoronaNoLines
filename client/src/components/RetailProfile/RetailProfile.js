@@ -8,16 +8,6 @@ import API from '../../utils/API'
 
 function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
     const [edit, setEdit] = useState(false);
-    // const [username, setUsername] = useState();
-    // const [password, setPassword] = useState();
-    // const [companyName, setCompanyName] = useState();
-    // const [address, setAddress] = useState();
-    // const [city, setCity] = useState();
-    // const [state, setState] = useState();
-    // const [zip, setZip] = useState();
-    // const [masks, setMasks] = useState();
-    // const [open, setOpen] = useState();
-    // const [curbside, setCurbside] = useState();
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
 
