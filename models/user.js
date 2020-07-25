@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const moment = require("moment");
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     consumer: {
@@ -8,13 +8,6 @@ const UserSchema = new Schema({
     },
 
     username: {
-        type: String,
-        trim: true,
-        required: "Username is Required",
-        unique: true
-    },
-
-    email: {
         type: String,
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
@@ -104,8 +97,8 @@ const UserSchema = new Schema({
     },
 
     userCreated: {
-        type: Date,
-        default: Date.now
+        type: String,
+        default: moment().format('MMMM Do YYYY')
     }
 
 });

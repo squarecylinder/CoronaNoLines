@@ -29,7 +29,7 @@ function Nav() {
               <div class="dropdown-menu">
                 <form onSubmit={handleLoginSubmit} class="px-4 py-3">
                   <div class="form-group">
-                    <label for="exampleDropdownFormEmail1">User Name</label>
+                    <label for="exampleDropdownFormEmail1">Email</label>
                     <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" onChange={e => setUsername(e.target.value)} />
                   </div>
                   <div class="form-group">

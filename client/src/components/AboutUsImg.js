@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutus from './Jumbotron/images/aboutus.jpg'
+import aboutus from '../assets/images/aboutus.jpg'
 
 function AboutUsImg() {
   return (

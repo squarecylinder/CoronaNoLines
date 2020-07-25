@@ -1,6 +1,6 @@
 import React from 'react';
 import './RestaurantProfile.css'
-import Logo from '../Jumbotron/images/logo-placeholder.jpg'
+import Logo from '../../assets/images/logo-placeholder.jpg'
 
 function RestaurantProfile() {
     return (

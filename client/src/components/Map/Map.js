@@ -34,6 +34,7 @@ onClose = props => {
 
   render() {
     return (
+    <div className="col">
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
@@ -49,6 +50,7 @@ onClose = props => {
           </div>
         </InfoWindow>
       </CurrentLocation>
+    </div>
     );
   }
 }

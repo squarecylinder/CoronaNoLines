@@ -18,7 +18,7 @@ function Retail({companyName, address, open, masks, curbside, handleRetailBtnCli
     <button onClick={handleRetailBtnClick} className="btn btn-success next-btn" data-value="next">Next Retail Store</button>
   </div>
   <div className="card-footer text-muted retail-footer">
-    Last updated: Insert {userCreated}
+    Last updated: {userCreated}
   </div>
 </div>
 </div>
