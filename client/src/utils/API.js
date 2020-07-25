@@ -12,7 +12,9 @@ PostSignUp: (SignData) => {
 SessionCheck: () => {
     return axios.get('/api/sessioncheck')
 },
-
+Update: (UpdateData) => {
+    return axios.put('/api/update' , UpdateData)
+},
 GetRestaurant: () => {
     return axios.get("/api/restaurant").then((res) => {
         const restaurants = res.data;

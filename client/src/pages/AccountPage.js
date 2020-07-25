@@ -29,7 +29,8 @@ function AccountPage() {
 
   useEffect(() => {
     sessionCheck()
-},[])
+
+}, [isLoggedIn])
 
 function sessionCheck() {
     API.SessionCheck().then((res) => {
@@ -66,7 +67,7 @@ function sessionCheck() {
         <div>
             <div>
                 {consumer ? <UserProfile email={email} password={password}/> : null}
-                {businessType === 'restaurant' ? <RestaurantProfile /> : null}
+                {businessType === 'restaurant' ? <RestaurantProfile  email={email} password={password} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} table={table} takeOut={takeOut} outsideDining={outsideDining}/> : null}
                 {businessType === 'retail' ? <RetailProfile email={email} password={password} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} /> : null}
             </div>
         </div>

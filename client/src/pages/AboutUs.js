@@ -1,6 +1,5 @@
 import React from 'react';
 import Aboutusjumbotron from '../components/Jumbotron/Aboutusjumbotron'
-import AboutUsImg from '../components/AboutUsImg';
 
 function AboutUs() {
     return (

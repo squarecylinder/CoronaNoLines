@@ -2,7 +2,7 @@ import React from 'react';
 import './RestaurantProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
 
-function RestaurantProfile() {
+function RestaurantProfile({email, password, companyName, open, address, city, state, zip , masks, curbside, driveThru, DineIn, tables}) {
     return (
         <div className="row" id="rest-profile-section">
             <div className="col-9 profile-background">

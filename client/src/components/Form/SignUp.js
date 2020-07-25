@@ -23,7 +23,6 @@ function SignUpInput() {
 
     function handleSignUpSubmit(event) {
         event.preventDefault();
-        console.log(username)
         API.PostSignUp({
             username: username, 
             password: password,  
