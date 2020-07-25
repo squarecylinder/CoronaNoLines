@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import API from '../../utils/API'
+import './Login.css'
+
 
 function LoginInput() {
     const [username, setUsername] = useState();
@@ -13,21 +15,23 @@ function LoginInput() {
     }
 
     return (
-        <div>
-            <div className="mt-4">
-                <h5>Login!</h5>
-            </div>
-            <form onSubmit={handleLoginSubmit}>
-                <div className="Form-group col-md-4">
-                    <label for="InputEmail">Username</label>
-                    <input type="text" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
+        <div className="col-6" id="login-form">
+        <div className="text-center signup-header">
+            <h3>Log In!</h3>
+            <h6>Please sign in with your consumer or business account credentials.</h6>
+        </div>
+
+            <form onSubmit={handleLoginSubmit} className="col form-bg">
+                <div className="row">
+                <div className="Form-group col-md-6">
+                    <label for="InputEmail" className="input-label">Username</label>
+                    <input type="text" className="form-control form-box" id="InputEmail" aria-describedby="emailHelp" onChange={e => setUsername(e.target.value)}></input>
                 </div>
-                <br/>
-                <div className="Form-group col-md-4">
-                    <label for="InputPassword">Password</label>
-                    <input type="password" className="form-control" id="InputPassword" onChange={e => setPassword(e.target.value)}></input>
-                    <br/>
-                    <button type="submit" className="btn btn-primary">Login</button>
+                <div className="Form-group col-md-6">
+                    <label for="InputPassword" className="input-label">Password</label>
+                    <input type="password" className="form-control form-box" id="InputPassword" onChange={e => setPassword(e.target.value)}></input>
+                    </div>
+                    <button type="submit" className="btn btn-primary login-btn btn-block">Login</button>
                 </div>
                 
                 
