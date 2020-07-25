@@ -1,10 +1,10 @@
 const path = require("path");
 const DB = require("../models")
 const router = require("express").Router();
-const {signup, login, restaurant, retail, users, sessioncheck} = require("./api/index.js");
+const {signup, login, restaurant, retail, users, sessioncheck, update} = require("./api/index.js");
 
 // API Routes
-router.use("/api", signup, login, restaurant, retail, users, sessioncheck);
+router.use("/api", signup, login, restaurant, retail, users, sessioncheck, update);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {

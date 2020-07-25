@@ -29,8 +29,7 @@ function AccountPage() {
 
   useEffect(() => {
     sessionCheck()
-
-}, [isLoggedIn])
+},)
 
 function sessionCheck() {
     API.SessionCheck().then((res) => {

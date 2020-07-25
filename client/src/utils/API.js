@@ -13,6 +13,7 @@ SessionCheck: () => {
     return axios.get('/api/sessioncheck')
 },
 Update: (UpdateData) => {
+    console.log(UpdateData)
     return axios.put('/api/update' , UpdateData)
 },
 GetRestaurant: () => {

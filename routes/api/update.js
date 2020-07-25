@@ -6,23 +6,29 @@ router.put('/update', (req, res) => {
         res.status(401);
     }
     else {
-        DB.User.findByIdAndUpdate({_id: req.user._id},
-            {username: req.user.username, 
-            password: req.user.password,  
-            consumer: req.user.accountType, 
-            companyName: req.user.companyName, 
-            businessType: req.user.businessType,
-            address: req.user.address,
-            city: req.user.city,
-            state: req.user.state,
-            zip: req.user.zip,
-            dineIn: req.user.dineIn, 
-            tables: req.user.table, 
-            outsideDining: req.user.outsideDining, 
-            takeOut: req.user.takeOut,
-            driveThru: req.user.driveThru,
-            curbside:req.user. curbside,
-            open: req.user.open, 
-            masks: req.user.masks}, omitUndefined=true)
+        console.log(req.user._id , req.body.username)
+        DB.User.findByIdAndUpdate(req.user._id,
+            {username: req.body.username, 
+            password: req.body.password,  
+            consumer: req.body.accountType, 
+            companyName: req.body.companyName, 
+            businessType: req.body.businessType,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            zip: req.body.zip,
+            dineIn: req.body.dineIn, 
+            tables: req.body.table, 
+            outsideDining: req.body.outsideDining, 
+            takeOut: req.body.takeOut,
+            driveThru: req.body.driveThru,
+            curbside:req.body. curbside,
+            open: req.body.open, 
+            masks: req.body.masks}, {omitUndefined: true, new: true}, (err, done) => {
+                console.log(done)
+                if (err) throw err;
+                res.json(done)
+            })
     }
 })
+module.exports = router;
