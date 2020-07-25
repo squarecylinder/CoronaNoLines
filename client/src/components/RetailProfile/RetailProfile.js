@@ -34,21 +34,21 @@ function RetailProfile({email, password, companyName, open, address, city, state
                 </div>
                 <div className="row categories">
                     <div className="col-sm-12">
-                        <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled/></h6>
+                        <h6>Email Address: <input className="form" type="text" id="email" value={email} disabled/></h6>
                         <hr></hr>
                         <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled/></h6>
                         <hr></hr>
-                        <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled/></h6>
+                        <h6>Company Name: <input className="form" type="text" id="companyName" value={companyName} disabled/></h6>
                         <hr></hr>
                         <h6>Currently Opened: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
-                        <h6>Address: <input type="text" className="form" id="address" placeholder={address} disabled/></h6>
+                        <h6>Address: <input type="text" className="form" id="address" value={address} disabled/></h6>
                         <hr></hr>
-                        <h6>City: <input type="text" className="form" id="city" placeholder={city} disabled/></h6>
+                        <h6>City: <input type="text" className="form" id="city" value={city} disabled/></h6>
                         <hr></hr>
-                        <h6>State: <input type="text" className="form"id="state" placeholder={state} disabled/></h6>
+                        <h6>State: <input type="text" className="form"id="state" value={state} disabled/></h6>
                         <hr></hr>
-                        <h6>Zip Code: <input type="text" className="form" id="zip" placeholder={zip} disabled/></h6>
+                        <h6>Zip Code: <input type="text" className="form" id="zip" value={zip} disabled/></h6>
                         <hr></hr>
                         <h6>Masks: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
