@@ -29,7 +29,7 @@ function AccountPage() {
 
   useEffect(() => {
     sessionCheck()
-})
+},[])
 
 function sessionCheck() {
     API.SessionCheck().then((res) => {
