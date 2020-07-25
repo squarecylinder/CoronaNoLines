@@ -127,7 +127,7 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row justify-content-center">
-                <LoginCard />
+                {/* <LoginCard /> */}
                 <Retail companyName={retail.companyName}
                 address={retail.address}
                 open={retail.open}

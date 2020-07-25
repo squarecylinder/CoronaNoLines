@@ -2,13 +2,13 @@ import React from 'react';
 import './RetailProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
 
-function RetailProfile() {
+function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
     return (
         <div className="row" id="retail-profile-section">
             <div className="col-9 profile-background">
                 <div className="row" id="retail-profile-header">
                     <div className="col-5">
-                        <h5 className="retail-name">Insert Retail Name</h5>
+                        <h5 className="retail-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
                         <button type="button" class="btn btn-success btn-sm float-right save-btn">Save Profile</button>
@@ -19,8 +19,6 @@ function RetailProfile() {
                     <div className="col-3">
                         <h6>Email Address:</h6>
                         <hr></hr>
-                        <h6>Username:</h6>
-                        <hr></hr>
                         <h6>Password:</h6>
                         <hr></hr>
                         <h6>Company Name:</h6>
@@ -29,27 +27,37 @@ function RetailProfile() {
                         <hr></hr>
                         <h6>Address:</h6>
                         <hr></hr>
+                        <h6>City:</h6>
+                        <hr></hr>
+                        <h6>State:</h6>
+                        <hr></hr>
+                        <h6>Zip Code:</h6>
+                        <hr></hr>
                         <h6>Masks:</h6>
                         <hr></hr>
                         <h6>Curbside:</h6>
 
                     </div>
                     <div className="col-9">
-                        <h6>Insert Email Address</h6>
+                        <h6>{email}</h6>
                         <hr></hr>
-                        <h6>Insert Username</h6>
+                        <h6>******</h6>
                         <hr></hr>
-                        <h6>Insert Password</h6>
+                        <h6>{companyName}</h6>
                         <hr></hr>
-                        <h6>Insert Company Name</h6>
+                        <h6><i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
-                        <h6>Currently Opened:</h6>
+                        <h6>{address}</h6>
                         <hr></hr>
-                        <h6>Insert Address</h6>
+                        <h6>{city}</h6>
                         <hr></hr>
-                        <h6>Insert Masks</h6>
+                        <h6>{state}</h6>
                         <hr></hr>
-                        <h6>Insert Curbside</h6>
+                        <h6>{zip}</h6>
+                        <hr></hr>
+                        <h6><i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <hr></hr>
+                        <h6><i className={curbside ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                     </div>
                 </div>
             </div>
