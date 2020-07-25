@@ -108,7 +108,7 @@ function SignUpInput() {
                     <div className="form-group col-md-6">
                         <label for="accountType" className="input-label">Choose an Account Type:</label>
                     <select name="accountType" id="accountType" className="account-box" onChange={e => setAccountType(e.target.value)}>
-                        <option value="true"></option>
+                        
                         <option value="true">Consumer</option>
                         <option value="false">Business</option>
                     </select>
@@ -231,6 +231,7 @@ function SignUpInput() {
                     <div>
                         <label for="businessType" className="input-label">Choose a Business Type</label>
                         <select name="businessType" id="businessType" className="account-box" onChange={e => setBusinessType(e.target.value)}>
+                            <option value="true"></option>
                             <option value="retail">Retail</option>
                             <option value="restaurant">Restaurant</option>
                         </select>
