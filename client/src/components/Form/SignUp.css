@@ -1,0 +1,62 @@
+#signup-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-header {
+    padding: 5px;
+    margin-top: 10px;
+    color: #343a40;
+}
+
+.form-bg {
+    background-color: #e4eef1;
+}
+
+.input-label {
+    color: #343a40;
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-box {
+    max-width: 400px;
+}
+
+.account-box {
+    margin-left: 10px;
+}
+
+.check-header {
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.check-titles {
+        color: #343a40;
+}
+
+.signup-btn {
+    margin-bottom: 25px;
+}
+
+.rest-check-header {
+    color: #343a40;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.account-box-tables {
+    margin-top: 15px;
+    margin-left: 10px;
+    max-width: 80px;
+}
+
+.input-label-tables {
+    color: #343a40;
+    margin-top: 22px;
+    font-weight: 500;
+}

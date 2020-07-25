@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import API from '../../utils/API'
+import './SignUp.css'
 
 function SignUpInput() {
     const [username, setUsername] = useState();
@@ -67,11 +68,12 @@ function SignUpInput() {
         disableOpen()
     }
     return (
-        <div>
-            <div className="mt-4 text-center">
-                <h2>Signup!</h2>
+        <div className="col-8" id="signup-form">
+            <div className="text-center signup-header">
+                <h3>Sign Up!</h3>
+                <h6>Please choose between a consumer account or business account.</h6>
             </div>
-            <form onSubmit={handleSignUpSubmit} className="col md-5">
+            <form onSubmit={handleSignUpSubmit} className="col form-bg">
                 {/* <div className="Form-group">
                     <label for="InputEmail">Email Address</label>
                     <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" onChange={e => setEmail(e.target.value)}></input>
@@ -94,16 +96,19 @@ function SignUpInput() {
                 </div> */}
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" className="form-control" id="inputEmail" placeholder="Email" onChange={e => setUsername(e.target.value)}/>
+                        <label for="inputEmail" className="input-label">Email</label>
+                        <input type="email" className="form-control place form-box" id="inputEmail" placeholder="Email" onChange={e => setUsername(e.target.value)}/>
                     </div>
                     <div className="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" className="form-control" id="InputPassword" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                        <label for="inputPassword4" className="input-label">Password</label>
+                        <input type="password" className="form-control form-box" id="InputPassword" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <div>
-                    <label for="accountType">Choose an Account Type</label>
-                    <select name="accountType" id="accountType" onChange={e => setAccountType(e.target.value)}>
+                    </div>
+                    <hr></hr>
+                    <div className="form-row">
+                    <div className="form-group col-md-6">
+                        <label for="accountType" className="input-label">Choose an Account Type:</label>
+                    <select name="accountType" id="accountType" className="account-box" onChange={e => setAccountType(e.target.value)}>
                         <option value="true"></option>
                         <option value="true">Consumer</option>
                         <option value="false">Business</option>
@@ -120,20 +125,20 @@ function SignUpInput() {
                     <input type="input" className="form-control" id="InputAddress" onChange={e => setAddress(e.target.value)}></input>
                 </div> */}
                 <div className="form-group">
-                    <label for="InputCompanyName">Company Name</label>
+                    <label for="InputCompanyName" className="input-label">Company Name</label>
                     <input type="text" className="form-control" id="InputCompanyName" placeholder="Company Name" onChange={e => setCompanyName(e.target.value)}/>
                 </div>
                 <div className="form-group">
-                    <label for="inputAddress">Address</label>
+                    <label for="inputAddress" className="input-label">Address</label>
                     <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" onChange={e => setAddress(e.target.value)}/>
                 </div>
                 <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label for="inputCity">City</label>
+                    <label for="inputCity" className="input-label">City</label>
                     <input type="text" className="form-control" id="inputCity" onChange={e => setCity(e.target.value)}/>
                 </div>
                 <div className="form-group col-md-4">
-                    <label for="inputState">State</label>
+                    <label for="inputState" className="input-label">State</label>
                     <select id="inputState" className="form-control" onChange={e => setState(e.target.value)}>
                         <option selected>Choose...</option>
                         <option value="AL">Alabama</option>
@@ -190,7 +195,7 @@ function SignUpInput() {
                     </select>
                 </div>
                 <div className="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
+                    <label for="inputZip" className="input-label">Zip</label>
                     <input type="text" className="form-control" id="inputZip" onChange={e => setZip(e.target.value)}/>
                 </div>
                 </div>
@@ -202,22 +207,22 @@ function SignUpInput() {
                     <label for="InputMask">Curbside</label>
                     <input type="input" placeholder="Enter true or false" className="form-control" id="InputCurbside" onChange={e => setCurbside(e.target.value)}></input>
                 </div> */}
-                <p className="font-weight-bold">Check all that apply:</p>
+                <p className="font-weight-bold check-header">Check all that apply:</p>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="masks" value="true" onClick={e => setMasks(e.target.value)}/>
-                    <label className="form-check-label" for="masks">Masks</label>
+                    <label className="form-check-label check-titles" for="masks">Masks</label>
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="curbside" value="true" onClick={e => setCurbside(e.target.value)}/>
-                    <label className="form-check-label" for="curbside">Curbside</label>
+                    <label className="form-check-label check-titles" for="curbside">Curbside</label>
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="open" value="true" onClick={handleOpen}/>
-                    <label className="form-check-label" for="open">Open</label>
+                    <label className="form-check-label check-titles" for="open">Open</label>
                 </div>
                 <div className="form-check form-check-inline">
                     <input className="form-check-input" type="checkbox" id="closed" value="true" onClick={handleClose}/>
-                    <label className="form-check-label" for="closed">Closed</label>
+                    <label className="form-check-label check-titles" for="closed">Closed</label>
                 </div>
                 <hr/>
                 {/* <div className="Form-group">
@@ -225,8 +230,8 @@ function SignUpInput() {
                     <input type="input" placeholder="Enter true or false" className="form-control" id="InputOpen" onChange={e => setOpen(e.target.value)}></input>
                 </div> */}
                     <div>
-                        <label for="businessType">Choose an Business Type</label>
-                        <select name="businessType" id="businessType" onChange={e => setBusinessType(e.target.value)}>
+                        <label for="businessType" className="input-label">Choose a Business Type</label>
+                        <select name="businessType" id="businessType" className="account-box" onChange={e => setBusinessType(e.target.value)}>
                             <option value="retail">Retail</option>
                             <option value="restaurant">Restaurant</option>
                         </select>
@@ -252,31 +257,31 @@ function SignUpInput() {
                     <label for="InputDriveThru">Take-Out</label>
                     <input type="input" placeholder="Enter true or false" className="form-control" id="InputDriveThru" onChange={e => setTakeOut(e.target.value)}></input>
                 </div> */}
-                        <p className="font-weight-bold">Check all that apply:</p>
+                        <p className="font-weight-bold rest-check-header">Check all that apply:</p>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input" type="checkbox" id="inputTakeOut" value="true" onClick={e => setTakeOut(e.target.value)}/>   
-                            <label className="form-check-label" for="inputTakeOut">Take-Out</label>  
+                            <label className="form-check-label check-titles" for="inputTakeOut">Take-Out</label>  
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input" type="checkbox" id="dineIn" value="true" onClick={e => setDineIn(e.target.value)}/>
-                            <label className="form-check-label" for="dineIn">Dine-In</label>
+                            <label className="form-check-label check-titles" for="dineIn">Dine-In</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input" type="checkbox" id="outsideDining" value="true" onClick={e => setOutsideDining(e.target.value)}/>
-                            <label className="form-check-label" for="outsideDining">Outside Dining</label>
+                            <label className="form-check-label check-titles" for="outsideDining">Outside Dining</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input className="form-check-input" type="checkbox" id="driveThru" value="true" onClick={e => setDriveThru(e.target.value)}/>
-                            <label className="form-check-label" for="driveThru">Drive Thru</label>
+                            <label className="form-check-label check-titles" for="driveThru">Drive Thru</label>
                         </div>
                         <div className="form-row">
-                            <label for="InputTable">Tables</label>
-                            <input type="number" placeholder="0" min="0" className="form-control" id="InputTable" onChange={e => setTable(e.target.value)}></input>
+                            <label for="InputTable" className="input-label-tables">Tables</label>
+                            <input type="number" placeholder="0" min="0" className="form-control account-box-tables" id="InputTable" onChange={e => setTable(e.target.value)}></input>
                         </div>
                     </div>
                 </div>
-                <br/>
-                <button type="submit" className="btn btn-primary">Signup</button>
+                <hr></hr>
+                <button type="submit" className="btn btn-primary signup-btn">Signup</button>
             </form>
         </div>
     )
