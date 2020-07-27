@@ -15,7 +15,7 @@
 }
 
 .maskpg {
-    background-image: url("./images/aboutus.jpg");
+    background-image: url("../../assets/images/aboutus.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
