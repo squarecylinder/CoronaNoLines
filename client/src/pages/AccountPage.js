@@ -65,9 +65,9 @@ function sessionCheck() {
     return (
         <div>
             <div>
-                {consumer ? <UserProfile email={email}/> : null}
-                {businessType === 'restaurant' ? <RestaurantProfile  email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} table={table} takeOut={takeOut} outsideDining={outsideDining}/> : null}
-                {businessType === 'retail' ? <RetailProfile email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside}/> : null}
+                {consumer ? <UserProfile password={password} email={email}/> : null}
+                {businessType === 'restaurant' ? <RestaurantProfile  password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} table={table} takeOut={takeOut} outsideDining={outsideDining}/> : null}
+                {businessType === 'retail' ? <RetailProfile password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside}/> : null}
             </div>
         </div>
     )

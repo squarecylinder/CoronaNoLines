@@ -1,9 +1,12 @@
-import React from 'react';
+import React ,{ useState } from 'react';
 import './RestaurantProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
-import API from '../../utils/API'                                                                 
+import API from '../../utils/API'
+import moment from 'moment';                                                               
 
-function RestaurantProfile({email, companyName, open, address, city, state, zip , masks, curbside, driveThru, dineIn, tables, outsideDining, takeOut}) {
+function RestaurantProfile({email, password, companyName, open, address, city, state, zip , masks, curbside, driveThru, dineIn, tables, outsideDining, takeOut}) {
+    const [edit, setEdit] = useState(false);
+    const Now = moment().format('MMMM Do YYYY');
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
 
@@ -26,6 +29,27 @@ function RestaurantProfile({email, companyName, open, address, city, state, zip 
         // let updatedCurbside = document.getElementById('curbside').value;
         // let updatedOpen = document.getElementById('open').value;
         // let updatedMasks = document.getElementById('masks').value;
+        if(updatedEmail === "") {
+            updatedEmail = email;
+        }
+        if(updatedPassword === "") {
+            updatedPassword = password;
+        }
+        if(updatedCompanyName === "") {
+            updatedCompanyName = companyName;
+        }
+        if(updatedAddress === "") {
+            updatedAddress = address;
+        }
+        if(updatedCity === "") {
+            updatedCity = city;
+        }
+        if(updatedState === "") {
+            updatedState = state;
+        }
+        if(updatedZip === "") {
+            updatedZip = zip;
+        }
         API.Update( 
           { username: updatedEmail, 
             password: updatedPassword,
@@ -34,6 +58,7 @@ function RestaurantProfile({email, companyName, open, address, city, state, zip 
             city: updatedCity,
             state: updatedState,
             zip: updatedZip,
+            userCreated: Now
             // curbside: updatedCurbside,
             // open: updatedOpen, 
             // masks: updatedMasks
@@ -59,17 +84,17 @@ function RestaurantProfile({email, companyName, open, address, city, state, zip 
                         <hr></hr>
                         <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Company Name: <input className="form" type="text" id="password" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Currently Opened: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
-                        <h6>Address <input className="form" type="text" id="password" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Address <input className="form" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>City <input className="form" type="text" id="password" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>City <input className="form" type="text" id="city" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>State <input className="form" type="text" id="password" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>State <input className="form" type="text" id="state" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Zip Code: <input className="form" type="text" id="password" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Zip Code: <input className="form" type="text" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Masks: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
