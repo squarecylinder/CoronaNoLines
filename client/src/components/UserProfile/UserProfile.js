@@ -1,8 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './UserProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
+import API from '../../utils/API';
 
-function UserProfile({email, password}) {
+function UserProfile({email}) {
+    const [edit, setEdit] = useState(false);
+    function handleDisable() {
+        var cls = document.getElementsByClassName('form');
+
+        for(var i = 0; i < cls.length; i++) {
+        cls[i].removeAttribute('disabled');
+        }
+    }
+    function handleEditClick() {
+        setEdit(true)
+        handleDisable()
+    }
+    function handleSaveClick() {
+        let updatedEmail = document.getElementById('email').value;
+        let updatedPassword = document.getElementById('password').value; API.Update( 
+          { username: updatedEmail, 
+            password: updatedPassword,
+        }).then(alert("Saving..."), window.location.reload())
+    }
     return (
         <div className="row" id="user-profile-section">
             <div className="col-9 profile-background">
@@ -11,21 +31,16 @@ function UserProfile({email, password}) {
                         <h5 className="user-name">Account Information</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" class="btn btn-success btn-sm float-right save-btn">Save Profile</button>
-                        <button type="button" class="btn btn-danger btn-sm float-right edit-btn">Edit Profile</button>
+                        <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                        <button type="button" class="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
                     <div className="col-3">
-                        <h6>Email Address:</h6>
+                        <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Password:</h6>
+                        <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         
-                    </div>
-                    <div className="col-9">
-                        <h6>{email}</h6>
-                        <hr></hr>
-                        <h6>******</h6>
                     </div>
                 </div>
             </div>
