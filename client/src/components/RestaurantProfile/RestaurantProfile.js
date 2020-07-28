@@ -1,7 +1,7 @@
 import React from 'react';
 import './RestaurantProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
-import API from '../../utils/API'
+import API from '../../utils/API'                                                                 
 
 function RestaurantProfile({email, companyName, open, address, city, state, zip , masks, curbside, driveThru, dineIn, tables, outsideDining, takeOut}) {
     function handleDisable() {
