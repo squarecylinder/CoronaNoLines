@@ -5,7 +5,7 @@ import Restaurant from '../components/RestaurantCard/Restaurant'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import API from '../utils/API';
 import HomeImg from '../components/HomeImg'
-import LoginCard from '../components/LoginCard/LoginCard'
+// import LoginCard from '../components/LoginCard/LoginCard'
 
 
     
@@ -127,7 +127,7 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row justify-content-center">
-                <LoginCard />
+                {/* <LoginCard /> */}
                 <Retail companyName={retail.companyName}
                 address={retail.address}
                 open={retail.open}

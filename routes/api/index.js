@@ -4,5 +4,6 @@ module.exports = {
     restaurant: require("./restaurant"),
     retail: require("./retail"),
     users: require("./users"),
-    sessioncheck: require("./sessioncheck")
+    sessioncheck: require("./sessioncheck"),
+    update: require("./update")
   };

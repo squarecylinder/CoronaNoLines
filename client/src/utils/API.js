@@ -15,6 +15,10 @@ SessionCheck: () => {
 Getallbusinesses: () => {
     return axios.get('/api/users')
 },
+Update: (UpdateData) => {
+    console.log(UpdateData)
+    return axios.put('/api/update' , UpdateData)
+},
 
 GetRestaurant: () => {
     return axios.get("/api/restaurant").then((res) => {
