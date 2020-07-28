@@ -3,7 +3,7 @@ import './UserProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
 import API from '../../utils/API';
 
-function UserProfile({email}) {
+function UserProfile({email, password }) {
     const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
@@ -18,7 +18,14 @@ function UserProfile({email}) {
     }
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
-        let updatedPassword = document.getElementById('password').value; API.Update( 
+        let updatedPassword = document.getElementById('password').value;
+        if(updatedEmail === "") {
+            updatedEmail = email;
+        }
+        if(updatedPassword === "") {
+            updatedPassword = password;
+        }
+        API.Update( 
           { username: updatedEmail, 
             password: updatedPassword,
         }).then(alert("Saving..."), window.location.reload())

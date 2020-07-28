@@ -6,7 +6,7 @@ import API from '../../utils/API'
 
 
 
-function RetailProfile({email, companyName, open, address, city, state, zip , masks, curbside}) {
+function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
     const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
@@ -30,6 +30,28 @@ function RetailProfile({email, companyName, open, address, city, state, zip , ma
         // let updatedCurbside = document.getElementById('curbside').value;
         // let updatedOpen = document.getElementById('open').value;
         // let updatedMasks = document.getElementById('masks').value;
+        
+        if(updatedEmail === "") {
+            updatedEmail = email;
+        }
+        if(updatedPassword === "") {
+            updatedPassword = password;
+        }
+        if(updatedCompanyName === "") {
+            updatedCompanyName = companyName;
+        }
+        if(updatedAddress === "") {
+            updatedAddress = address;
+        }
+        if(updatedCity === "") {
+            updatedCity = city;
+        }
+        if(updatedState === "") {
+            updatedState = state;
+        }
+        if(updatedZip === "") {
+            updatedZip = zip;
+        }
         API.Update( 
           { username: updatedEmail, 
             password: updatedPassword,
