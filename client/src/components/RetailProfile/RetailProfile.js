@@ -6,7 +6,7 @@ import API from '../../utils/API'
 
 
 
-function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
+function RetailProfile({email, companyName, open, address, city, state, zip , masks, curbside}) {
     const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
