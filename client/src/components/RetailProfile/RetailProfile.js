@@ -19,6 +19,10 @@ function RetailProfile({email, password, companyName, open, address, city, state
         setEdit(true)
         handleDisable()
     }
+    function buttonClick(x) {
+        x.classList.toggle('fa-check')
+        console.log("clicked")
+    }
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
         let updatedPassword = document.getElementById('password').value;
@@ -30,6 +34,28 @@ function RetailProfile({email, password, companyName, open, address, city, state
         // let updatedCurbside = document.getElementById('curbside').value;
         // let updatedOpen = document.getElementById('open').value;
         // let updatedMasks = document.getElementById('masks').value;
+        
+        if(updatedEmail === "") {
+            updatedEmail = email;
+        }
+        if(updatedPassword === "") {
+            updatedPassword = password;
+        }
+        if(updatedCompanyName === "") {
+            updatedCompanyName = companyName;
+        }
+        if(updatedAddress === "") {
+            updatedAddress = address;
+        }
+        if(updatedCity === "") {
+            updatedCity = city;
+        }
+        if(updatedState === "") {
+            updatedState = state;
+        }
+        if(updatedZip === "") {
+            updatedZip = zip;
+        }
         API.Update( 
           { username: updatedEmail, 
             password: updatedPassword,
@@ -52,8 +78,8 @@ function RetailProfile({email, password, companyName, open, address, city, state
                         <h5 className="retail-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
-                        <button type="button" class="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
+                        <button type="button" className="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                        <button type="button" className="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
@@ -74,7 +100,7 @@ function RetailProfile({email, password, companyName, open, address, city, state
                         <hr></hr>
                         <h6>Zip Code: <input type="text" className="form" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Masks: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Masks: <i id="mark" className={masks ? 'fa fa-check' : 'fa fa-times'} onClick={buttonClick}></i></h6>
                         <hr></hr>
                         <h6>Curbside: <i className={curbside ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         
@@ -85,9 +111,9 @@ function RetailProfile({email, password, companyName, open, address, city, state
                 <div>
                     <img src={Logo} alt="placeholder" className="img-fluid"></img>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg btn-block social-btn">Update Facebook Profile</button>
-                <button type="button" class="btn btn-info btn-lg btn-block social-btn">Send a Tweet</button>
-                <h6 class="social-media">Keep your social media accounts up to date by linking your WIP account page every time you make a change.</h6>
+                <button type="button" className="btn btn-primary btn-lg btn-block social-btn">Update Facebook Profile</button>
+                <button type="button" className="btn btn-info btn-lg btn-block social-btn">Send a Tweet</button>
+                <h6 className="social-media">Keep your social media accounts up to date by linking your WIP account page every time you make a change.</h6>
             </div>
         </div>
 
