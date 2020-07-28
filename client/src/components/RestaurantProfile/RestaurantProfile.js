@@ -18,13 +18,6 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         setEdit(true)
         handleDisable()
     }
-<<<<<<< HEAD
-    function toggle() {
-        console.log("Clicked")
-        
-    }
-=======
->>>>>>> b29270b52aa474870e525d0309221a2d2366cb15
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
         let updatedPassword = document.getElementById('password').value;
