@@ -18,10 +18,13 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         setEdit(true)
         handleDisable()
     }
+<<<<<<< HEAD
     function toggle() {
         console.log("Clicked")
         
     }
+=======
+>>>>>>> b29270b52aa474870e525d0309221a2d2366cb15
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
         let updatedPassword = document.getElementById('password').value;
@@ -83,8 +86,8 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <h5 className="rest-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" className="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
-                        <button type="button" className="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
+                        <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                        <button type="button" class="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
@@ -95,7 +98,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <hr></hr>
                         <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Currently Opened: <button><i onClick={console.log("clicked")} className={open ? 'fa fa-check' : 'fa fa-times'}></i></button></h6>
+                        <h6>Currently Opened: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
                         <h6>Address <input className="form" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
