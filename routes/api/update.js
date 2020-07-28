@@ -18,7 +18,7 @@ router.put('/update', (req, res) => {
             state: req.body.state,
             zip: req.body.zip,
             dineIn: req.body.dineIn, 
-            tables: req.body.table, 
+            tables: req.body.tables, 
             outsideDining: req.body.outsideDining, 
             takeOut: req.body.takeOut,
             driveThru: req.body.driveThru,
