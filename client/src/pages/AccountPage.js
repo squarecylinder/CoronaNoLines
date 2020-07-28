@@ -20,7 +20,7 @@ function AccountPage() {
   const [state, setState] = useState();
   const [zip, setZip] = useState();
   const [dineIn, setDineIn] = useState();
-  const [table, setTable] = useState();
+  const [tables, setTables] = useState();
   const [outsideDining, setOutsideDining] = useState();
   const [takeOut, setTakeOut] = useState();
   const [driveThru, setDriveThru] = useState();
@@ -52,7 +52,7 @@ function sessionCheck() {
                 setCurbside(res.data.curbside)
                 setDriveThru(res.data.driveThru)
                 setDineIn(res.data.dineIn)
-                setTable(res.data.table)
+                setTables(res.data.tables)
                 setTakeOut(res.data.takeOut)
                 setOutsideDining(res.data.outsideDining)
             }
@@ -66,7 +66,7 @@ function sessionCheck() {
         <div>
             <div>
                 {consumer ? <UserProfile password={password} email={email}/> : null}
-                {businessType === 'restaurant' ? <RestaurantProfile  password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} table={table} takeOut={takeOut} outsideDining={outsideDining}/> : null}
+                {businessType === 'restaurant' ? <RestaurantProfile  password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} tables={tables} takeOut={takeOut} outsideDining={outsideDining}/> : null}
                 {businessType === 'retail' ? <RetailProfile password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside}/> : null}
             </div>
         </div>

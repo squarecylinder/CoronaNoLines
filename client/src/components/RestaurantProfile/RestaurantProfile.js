@@ -26,6 +26,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         let updatedCity = document.getElementById('city').value;
         let updatedState = document.getElementById('state').value;
         let updatedZip = document.getElementById('zip').value;
+        let updatedTables = document.getElementById('tables').value;
         // let updatedCurbside = document.getElementById('curbside').value;
         // let updatedOpen = document.getElementById('open').value;
         // let updatedMasks = document.getElementById('masks').value;
@@ -50,6 +51,9 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         if(updatedZip === "") {
             updatedZip = zip;
         }
+        if(updatedTables === "") {
+            updatedTables = tables;
+        }
         API.Update( 
           { username: updatedEmail, 
             password: updatedPassword,
@@ -58,6 +62,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
             city: updatedCity,
             state: updatedState,
             zip: updatedZip,
+            tables: updatedTables,
             userCreated: Now
             // curbside: updatedCurbside,
             // open: updatedOpen, 
@@ -102,7 +107,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <hr></hr>
                         <h6>Dine In: <i className={dineIn ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
-                        <h6>Tables: <i className={tables ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Tables: <input className="form" type="number" id="tables" placeholder={tables} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Outside Dining: <i className={outsideDining ? 'fa fa-check' : 'fa fa-times'}></i></h6>
                         <hr></hr>
