@@ -36,7 +36,7 @@ function Nav() {
           <li className="nav-item">
             <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle bg-dark login-nav-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span className="fas fa-sign-in"></span> Sign In</button>
+                <span className="fa fa-sign-in"></span> Sign In</button>
               <div className="dropdown-menu">
                 <form onSubmit={handleLoginSubmit} className="px-4 py-3">
                   <div className="form-group">
@@ -56,7 +56,7 @@ function Nav() {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="/signup"><span className="fas fa-user"></span> Sign Up</a>
+            <a className="nav-link" href="/signup"><span className="fa fa-user"></span> Sign Up</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/aboutus">About Us</a>

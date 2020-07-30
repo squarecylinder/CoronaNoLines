@@ -136,8 +136,7 @@ function Home(){
             <div className="row">
                 <Jumbotron />
             </div>
-            <div className="container">
-            <div  className="row">
+            <div  className="row justify-content-center">
             <LoadScript
       googleMapsApiKey="AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8"
     >
@@ -148,7 +147,6 @@ function Home(){
                 {restaurantcards}
                 </div>
                 </LoadScript>
-             </div>
              </div>
              <MapContainer /> 
         </div>
