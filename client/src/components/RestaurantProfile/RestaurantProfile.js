@@ -18,6 +18,9 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         setEdit(true)
         handleDisable()
     }
+    function handleChange(e) {
+        e.target.value = document.getElementById('open').value 
+    }
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
         let updatedPassword = document.getElementById('password').value;
@@ -28,7 +31,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         let updatedZip = document.getElementById('zip').value;
         let updatedTables = document.getElementById('tables').value;
         // let updatedCurbside = document.getElementById('curbside').value;
-        // let updatedOpen = document.getElementById('open').value;
+        let updatedOpen = open;
         // let updatedMasks = document.getElementById('masks').value;
         if(updatedEmail === "") {
             updatedEmail = email;
@@ -63,9 +66,9 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
             state: updatedState,
             zip: updatedZip,
             tables: updatedTables,
-            userCreated: Now
+            userCreated: Now,
             // curbside: updatedCurbside,
-            // open: updatedOpen, 
+            open: updatedOpen, 
             // masks: updatedMasks
         }).then(alert("Saving..."), window.location.reload())
     }
@@ -84,14 +87,14 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                     </div>
                 </div>
                 <div className="row categories">
-                    <div className="col-3">
+                    <div className="col-sm-12">
                         <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Currently Opened: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Currently Opened: <i id='open' className={open ? 'fa fa-check' : 'fa fa-times'} onClick={e => {if({open} === true){open = false} else open = true}}></i></h6>
                         <hr></hr>
                         <h6>Address <input className="form" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
