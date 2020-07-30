@@ -136,7 +136,8 @@ function Home(){
             <div className="row">
                 <Jumbotron />
             </div>
-            <div  className="row justify-content-center">
+            <div className="container">
+            <div  className="row">
             <LoadScript
       googleMapsApiKey="AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8"
     >
@@ -147,26 +148,7 @@ function Home(){
                 {restaurantcards}
                 </div>
                 </LoadScript>
-                {/* <LoginCard /> */}  {/*
-                <Retail companyName={retail.companyName}
-                address={retail.address}
-                open={retail.open}
-                curbside={retail.curbside}
-                masks={retail.masks}
-                handleRetailBtnClick={handleRetailBtnClick}
-                userCreated={retail.userCreated}
-                />
-                <Restaurant companyName={restaurant.companyName}
-                address={restaurant.address}
-                dineIn={restaurant.dineIn} 
-                tables={restaurant.tables}
-                outsideDining={restaurant.outsideDining} 
-                takeOut={restaurant.takeOut} 
-                driveThru={restaurant.driveThru}
-                open={restaurant.open} 
-                masks={restaurant.masks}
-                userCreated={restaurant.userCreated}
-                handleBtnClick={handleBtnClick} />  */}
+             </div>
              </div>
              <MapContainer /> 
         </div>
