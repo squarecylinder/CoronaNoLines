@@ -5,6 +5,80 @@ const moment = require("moment");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/projectDatabase");
 
 var userSeed = [
+  {
+    consumer: true,
+    username: "yayCongratulationsToFullstackGraduates@gmail.com",
+    password: "SuperCongrats!",
+    userCreated :  moment().format('MMMM Do YYYY')
+    },
+    {
+        consumer: false,
+        username: "Seednothing333@gmail.com",
+        password: "Super3332",
+        companyName: "Seed333",
+        address: "12345 Three Street",
+        city: "San Francisco",
+        state: "CA",
+        zip: "12345",
+        businessType: "retail",
+        open: true,
+        curbside: false,
+        masks: true,
+        userCreated :  moment().format('MMMM Do YYYY')
+    },
+    {
+        consumer: false,
+        username: "Seeder8883@gmail.com",
+        password: "Awesome8883",
+        companyName: "Seed Town",
+        businessType: "restaurant",
+        address: "54321 Awesome Street",
+        city: "San Dee Dee",
+        state: "CA",
+        zip: "12345",
+        dineIn: true,
+        tables: 5,
+        outsideDining: false,
+        takeOut: true,
+        driveThru: true,
+        masks: true,
+        open: true,
+        userCreated :  moment().format('MMMM Do YYYY')
+    },
+    {
+      consumer: false,
+      username: "YOUmadeITwoohoo!@gmail.com",
+      password: "SuperBlooper2",
+      companyName: "SeedDees",
+      address: "12345 Dees Street",
+      city: "San Dude",
+      state: "CA",
+      zip: "12345",
+      businessType: "retail",
+      open: true,
+      curbside: true,
+      masks: true,
+      userCreated :  moment().format('MMMM Do YYYY')
+  },
+  {
+      consumer: false,
+      username: "YesMomcapandgown@gmail.com",
+      password: "SuperOm",
+      companyName: "Seed Goo",
+      businessType: "restaurant",
+      address: "54321 Good Street",
+      city: "San Goo",
+      state: "CA",
+      zip: "12345",
+      dineIn: true,
+      tables: 5,
+      outsideDining: false,
+      takeOut: true,
+      driveThru: true,
+      masks: true,
+      open: true,
+      userCreated :  moment().format('MMMM Do YYYY')
+    },
     {
     consumer: true,
     username: "Seeder24@gmail.com",
@@ -21,6 +95,9 @@ var userSeed = [
         state: "CA",
         zip: "12345",
         businessType: "retail",
+        open: true,
+        curbside: true,
+        masks: false,
         userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -39,8 +116,44 @@ var userSeed = [
         takeOut: true,
         driveThru: true,
         masks: true,
+        open: true,
         userCreated :  moment().format('MMMM Do YYYY')
-    }
+    },
+    {
+      consumer: false,
+      username: "Seeder20@gmail.com",
+      password: "SuperDooper2",
+      companyName: "SeedBees",
+      address: "12345 Bees Street",
+      city: "San Dude",
+      state: "CA",
+      zip: "12345",
+      businessType: "retail",
+      open: true,
+      curbside: false,
+      masks: false,
+      userCreated :  moment().format('MMMM Do YYYY')
+  },
+  {
+      consumer: false,
+      username: "Seeder787@gmail.com",
+      password: "SuperWhat3",
+      companyName: "Seed Mow",
+      businessType: "restaurant",
+      address: "54321 Food Street",
+      city: "San Goo",
+      state: "CA",
+      zip: "12345",
+      dineIn: true,
+      tables: 5,
+      outsideDining: false,
+      takeOut: true,
+      driveThru: true,
+      masks: true,
+      open: true,
+      userCreated :  moment().format('MMMM Do YYYY')
+  }
+
 
 ];
 

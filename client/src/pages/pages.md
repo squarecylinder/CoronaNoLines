@@ -1,1 +1,0 @@
-This will be our front end routing. This will take handle if someone clicks on profile or search business that it takes them to another page on the site. 
