@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React /*,{useState}*/ from 'react';
 import './RetailProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
 import API from '../../utils/API'
@@ -7,7 +7,7 @@ import API from '../../utils/API'
 
 
 function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
-    const [edit, setEdit] = useState(false);
+    // const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
 
@@ -16,7 +16,7 @@ function RetailProfile({email, password, companyName, open, address, city, state
         }
     }
     function handleEditClick() {
-        setEdit(true)
+        // setEdit(true)
         handleDisable()
     }
     function handleSaveClick() {

@@ -40,11 +40,11 @@ function Nav() {
               <div className="dropdown-menu">
                 <form onSubmit={handleLoginSubmit} className="px-4 py-3">
                   <div className="form-group">
-                    <label for="exampleDropdownFormEmail1">Email</label>
+                    <label htmlFor="exampleDropdownFormEmail1">Email</label>
                     <input type="email" className="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" onChange={e => setUsername(e.target.value)} />
                   </div>
                   <div className="form-group">
-                    <label for="exampleDropdownFormPassword1">Password</label>
+                    <label htmlFor="exampleDropdownFormPassword1">Password</label>
                     <input type="password" className="form-control" id="exampleDropdownFormPassword1" placeholder="Password" onChange={e => setPassword(e.target.value)} />
                   </div>
                   <button type="submit" className="btn btn-primary">Sign In</button>
