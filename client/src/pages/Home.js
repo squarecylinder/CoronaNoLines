@@ -1,10 +1,12 @@
 import React, {useState, useEffect } from 'react';
 import MapContainer from '../components/Map/Map';
-import Retail from '../components/RetailCard/Retail'
-import Restaurant from '../components/RestaurantCard/Restaurant'
-import Jumbotron from '../components/Jumbotron/Jumbotron'
+import Retail from '../components/RetailCard/Retail';
+import Restaurant from '../components/RestaurantCard/Restaurant';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
 import API from '../utils/API';
-import HomeImg from '../components/HomeImg'
+import HomeImg from '../components/HomeImg';
+import {GoogleMap, LoadScript} from '@react-google-maps/api';
+
 // import LoginCard from '../components/LoginCard/LoginCard'
 
 
@@ -118,6 +120,42 @@ function Home(){
     //     userCreated={retail.userCreated}
     // />
     // }
+
+    let retailcards;
+    if (retails.length > 0 ) {
+        console.log(retails)
+        retailcards = retails.map (ret => 
+            <li key={ret._id}>
+            <Retail companyName={ret.companyName}
+            address={ret.address}
+            open={ret.open}
+            curbside={ret.curbside}
+            masks={ret.masks}
+            handleRetailBtnClick={handleRetailBtnClick}
+            userCreated={ret.userCreated}
+            /></li>    
+        )
+    }
+    let restaurantcards;
+    if (restaurants.length > 0 ) {
+        console.log(restaurants)
+        restaurantcards = restaurants.map (rest => 
+            <li key={rest._id}>
+            <Restaurant companyName={rest.companyName}
+            address={rest.address}
+            dineIn={rest.dineIn} 
+            tables={rest.tables}
+            outsideDining={rest.outsideDining} 
+            takeOut={rest.takeOut} 
+            driveThru={rest.driveThru}
+            open={rest.open} 
+            masks={rest.masks}
+            userCreated={rest.userCreated}
+            handleBtnClick={handleBtnClick} />  
+        </li>
+        )
+    }
+
     return (
         <div>
             <div className="row">
@@ -127,7 +165,17 @@ function Home(){
             <Jumbotron />
             </div>
             <div  className="row justify-content-center">
-                {/* <LoginCard /> */}
+            <LoadScript
+      googleMapsApiKey="AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8"
+    >
+                <ul>
+                {retailcards}
+                </ul>
+                <ul>
+                {restaurantcards}
+                </ul>
+                </LoadScript>
+                {/* <LoginCard /> */}  {/*
                 <Retail companyName={retail.companyName}
                 address={retail.address}
                 open={retail.open}
@@ -146,7 +194,7 @@ function Home(){
                 open={restaurant.open} 
                 masks={restaurant.masks}
                 userCreated={restaurant.userCreated}
-                handleBtnClick={handleBtnClick} />  
+                handleBtnClick={handleBtnClick} />  */}
                 {/* <Retail />
                 <Retail /> */}
                 {/* {restaurantCard} */}
