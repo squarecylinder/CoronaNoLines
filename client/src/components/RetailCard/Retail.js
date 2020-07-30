@@ -1,6 +1,6 @@
 import React from 'react';
 import './retail.css';
-import {GoogleMap, LoadScript} from '@react-google-maps/api';
+import {GoogleMap, /*LoadScript*/} from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',

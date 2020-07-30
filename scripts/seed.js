@@ -21,6 +21,9 @@ var userSeed = [
         state: "CA",
         zip: "12345",
         businessType: "retail",
+        open: true,
+        curbside: false,
+        masks: true,
         userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -39,6 +42,7 @@ var userSeed = [
         takeOut: true,
         driveThru: true,
         masks: true,
+        open: true,
         userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -51,6 +55,9 @@ var userSeed = [
       state: "CA",
       zip: "12345",
       businessType: "retail",
+      open: true,
+      curbside: true,
+      masks: true,
       userCreated :  moment().format('MMMM Do YYYY')
   },
   {
@@ -69,6 +76,7 @@ var userSeed = [
       takeOut: true,
       driveThru: true,
       masks: true,
+      open: true,
       userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -87,6 +95,9 @@ var userSeed = [
         state: "CA",
         zip: "12345",
         businessType: "retail",
+        open: true,
+        curbside: true,
+        masks: false,
         userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -105,6 +116,7 @@ var userSeed = [
         takeOut: true,
         driveThru: true,
         masks: true,
+        open: true,
         userCreated :  moment().format('MMMM Do YYYY')
     },
     {
@@ -117,6 +129,9 @@ var userSeed = [
       state: "CA",
       zip: "12345",
       businessType: "retail",
+      open: true,
+      curbside: false,
+      masks: false,
       userCreated :  moment().format('MMMM Do YYYY')
   },
   {
@@ -135,6 +150,7 @@ var userSeed = [
       takeOut: true,
       driveThru: true,
       masks: true,
+      open: true,
       userCreated :  moment().format('MMMM Do YYYY')
   }
 

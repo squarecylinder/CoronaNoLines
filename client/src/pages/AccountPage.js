@@ -6,8 +6,8 @@ import UserProfile from '../components/UserProfile/UserProfile'
 import API from '../utils/API';
 
 function AccountPage() {
-      
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Creating states and setters
+//   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [consumer, setConsumer] = useState(null);
   const [businessType, setBusinessType] = useState(null);
   const [email, setEmail] = useState();
@@ -26,18 +26,20 @@ function AccountPage() {
   const [driveThru, setDriveThru] = useState();
   const [curbside, setCurbside] = useState();
 
-
+    // runs when page loads
   useEffect(() => {
     sessionCheck()
 },)
-
+// Check if the user is signed in on the front end by checking backend
 function sessionCheck() {
     API.SessionCheck().then((res) => {
+        // If the response gets a successful response
         if (res.status === 200) {
-            setIsLoggedIn(true);
+            // setIsLoggedIn(true);
             setConsumer(res.data.consumer)
             setEmail(res.data.username)
             setPassword(res.data.password)
+            // If the account isn't a consumer
             if(!consumer){
                 setBusinessType(res.data.businessType)
                 setEmail(res.data.username)
@@ -65,6 +67,7 @@ function sessionCheck() {
     return (
         <div>
             <div>
+                {/* Using ternary operators to conditionally render the correct profile page */}
                 {consumer ? <UserProfile password={password} email={email}/> : null}
                 {businessType === 'restaurant' ? <RestaurantProfile  password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside} driveThru={driveThru} dineIn={dineIn} tables={tables} takeOut={takeOut} outsideDining={outsideDining}/> : null}
                 {businessType === 'retail' ? <RetailProfile password={password} email={email} companyName={companyName} open={open} address={address} city={city} state={state} zip={zip} masks={masks} curbside={curbside}/> : null}

@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React /*,{useState}*/ from 'react';
 import './UserProfile.css'
 import Logo from '../../assets/images/logo-placeholder.jpg'
 import API from '../../utils/API';
 
 function UserProfile({email, password }) {
-    const [edit, setEdit] = useState(false);
+    // const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
 
@@ -13,7 +13,7 @@ function UserProfile({email, password }) {
         }
     }
     function handleEditClick() {
-        setEdit(true)
+        // setEdit(true)
         handleDisable()
     }
     function handleSaveClick() {

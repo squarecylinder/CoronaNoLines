@@ -8,26 +8,22 @@ import HomeImg from '../components/HomeImg';
 import {GoogleMap, LoadScript} from '@react-google-maps/api';
 
 // import LoginCard from '../components/LoginCard/LoginCard'
-
-
-    
 //Need to iterate to dynamically generate new Cards
 function Home(){
+    //Creating our states and setters
     const [restaurant, setRestaurant] = useState({});
     const [restaurants, setRestaurants] = useState([]);
     const [restaurantIndex, setRestaurantIndex] = useState(0);
     const [retail, setRetail] = useState({});
     const [retails, setRetails] = useState([]);
     const [retailIndex, setRetailIndex] = useState(0);
-  
+    // functional onMount/onUpdate to run our functions when page loads
      useEffect(() => {
         loadRestaurants();
+        loadRetail();
     }, []);    
 
-    useEffect(() => {
-        loadRetail();
-    }, []);
-
+    // Creating our Previous and Next buttons, may be taken out in final stage
     function nextRestaurant(restaurantIndex) {
         if (restaurantIndex >= restaurants.length) {
             restaurantIndex = 0;
@@ -43,6 +39,7 @@ function Home(){
         setRestaurant(restaurants[restaurantIndex]);
         setRestaurantIndex(restaurantIndex);
     }
+    // Allows our Previous and Next buttons to work
     function handleBtnClick(event) {
         // Get the title of the clicked button
         const btnName = event.target.getAttribute("data-value");
@@ -54,15 +51,14 @@ function Home(){
           previousRestaurant(newRestaurantIndex);
         }
       }
+    // Grabbing our database to load on the front end.
     function loadRestaurants() {
         API.GetRestaurant().then(restaurants => {
-            console.log (restaurants);
             setRestaurants(restaurants);
             setRestaurant(restaurants[0])
         }).catch(err => console.log(err));
     }
-
-
+    // Same thing as the restaurants
     function nextRetail(retailIndex) {
         if (retailIndex >= retails.length) {
             retailIndex = 0;
@@ -95,37 +91,12 @@ function Home(){
             setRetail(retails[0])
         }).catch(err => console.log(err));
     }
-    // let restaurantCard;
-    // if(restaurant){
-    //     restaurantCard =  <Restaurant companyName={restaurant.companyName}
-    //     address={restaurant.address}
-    //     dineIn={restaurant.dineIn} 
-    //     tables={restaurant.tables}
-    //     outsideDining={restaurant.outsideDining} 
-    //     takeOut={restaurant.takeOut} 
-    //     driveThru={restaurant.driveThru}
-    //     open={restaurant.open} 
-    //     masks={restaurant.masks}
-    //     userCreated={restaurant.userCreated}
-    //     handleBtnClick={handleBtnClick} />              
-    // }
-    // let retailCard;
-    // if(retail){
-    //     retailCard = <Retail companyName={retail.companyName}
-    //     address={retail.address}
-    //     open={retail.open}
-    //     curbside={retail.curbside}
-    //     masks={retail.masks}
-    //     handleRetailBtnClick={handleRetailBtnClick}
-    //     userCreated={retail.userCreated}
-    // />
-    // }
-
+    // Creating the cards to load a list on the home page
     let retailcards;
     if (retails.length > 0 ) {
-        console.log(retails)
+        // console.log(retails)
         retailcards = retails.map (ret => 
-            <li key={ret._id}>
+            <div key={ret._id}>
             <Retail companyName={ret.companyName}
             address={ret.address}
             open={ret.open}
@@ -133,14 +104,15 @@ function Home(){
             masks={ret.masks}
             handleRetailBtnClick={handleRetailBtnClick}
             userCreated={ret.userCreated}
-            /></li>    
+            /></div>    
         )
     }
+    // Creating the cards to load a list on the home page
     let restaurantcards;
     if (restaurants.length > 0 ) {
-        console.log(restaurants)
+        // console.log(restaurants)
         restaurantcards = restaurants.map (rest => 
-            <li key={rest._id}>
+            <div key={rest._id}>
             <Restaurant companyName={rest.companyName}
             address={rest.address}
             dineIn={rest.dineIn} 
@@ -152,7 +124,7 @@ function Home(){
             masks={rest.masks}
             userCreated={rest.userCreated}
             handleBtnClick={handleBtnClick} />  
-        </li>
+        </div>
         )
     }
 
@@ -161,19 +133,19 @@ function Home(){
             <div className="row">
                 <HomeImg />
             </div>
-                <div className="row">
-            <Jumbotron />
+            <div className="row">
+                <Jumbotron />
             </div>
             <div  className="row justify-content-center">
             <LoadScript
       googleMapsApiKey="AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8"
     >
-                <ul>
+                <div>
                 {retailcards}
-                </ul>
-                <ul>
+                </div>
+                <div>
                 {restaurantcards}
-                </ul>
+                </div>
                 </LoadScript>
                 {/* <LoginCard /> */}  {/*
                 <Retail companyName={retail.companyName}
@@ -195,11 +167,6 @@ function Home(){
                 masks={restaurant.masks}
                 userCreated={restaurant.userCreated}
                 handleBtnClick={handleBtnClick} />  */}
-                {/* <Retail />
-                <Retail /> */}
-                {/* {restaurantCard} */}
-                {/* <Restaurant />
-                <Restaurant /> */}
              </div>
              <MapContainer /> 
         </div>

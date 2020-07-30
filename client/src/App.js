@@ -9,10 +9,8 @@ import NoMatch from './pages/404';
 import Nav from './components/Nav/Nav'
 import './App.css';
 import Footer from './components/Footer/Footer';
-import ListAll from './pages/ListAll';
 
 function App() {
-
   return (
     <Router>
       <div>
@@ -32,9 +30,6 @@ function App() {
           </Route>
           <Route path="/accountpage/:id">
           <AccountPage  />
-          </Route>
-          <Route exact path="/listall">
-          <ListAll />
           </Route>
           <Route>
             <NoMatch />
