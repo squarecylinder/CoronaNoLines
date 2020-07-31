@@ -4,7 +4,7 @@ import {GoogleMap, LoadScript} from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
-  height: '200px'
+  height: '400px'
 };
  
 const center = {
@@ -30,18 +30,6 @@ function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOu
     <div className="col-12" id="restaurant-card">
 <div className="card">
   <h5 className="card-header restaurant-header">{companyName}</h5>
-  <div className="map-container">
-  <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-      </div>
   <div className="card-body card-list">
     <h6>Address: {address} </h6>
     <h6>Open: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
@@ -59,7 +47,16 @@ function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOu
       */}
   </div>
 
-  
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+      >
+        { /* Child components, such as markers, info windows, etc. */ }
+        <></>
+      </GoogleMap>
    
   <div className="card-footer restaurant-footer">
     Last updated: {userCreated}

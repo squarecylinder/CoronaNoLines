@@ -4,7 +4,7 @@ import {GoogleMap, /*LoadScript*/} from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
-  height: '200px'
+  height: '400px'
 };
  
 const center = {
@@ -30,16 +30,6 @@ function Retail({companyName, address, open, masks, curbside, handleRetailBtnCli
     <div id="retail-card">
 <div className="card">
   <h5 className="card-header retail-header">{companyName}</h5>
-  <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
   <div className="card-body card-list">
     <h6>Address: {address} </h6>
     <h6>Open: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
@@ -52,6 +42,17 @@ function Retail({companyName, address, open, masks, curbside, handleRetailBtnCli
     <button onClick={handleRetailBtnClick} className="btn btn-success next-btn" data-value="next">Next Retail Store</button>
       */}
     </div>
+
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+      >
+        { /* Child components, such as markers, info windows, etc. */ }
+        <></>
+      </GoogleMap>
     
   <div className="card-footer text-muted retail-footer">
     Last updated: {userCreated}

@@ -19,6 +19,16 @@
 
 .edit-btn {
     margin-right: 10px;
+    color: white;
+}
+
+.save-btn {
+    margin-right: 10px;
+}
+
+.delete-btn {
+    margin-right: 10px;
+    margin-top: 3px;
 }
 
 .categories {
@@ -35,5 +45,16 @@
 
 .social-btn {
     font-size: 12pt;
+}
+
+.form-inputs {
+    border: none;
+    background-color: white;
+}
+
+.table-width {
+    width: 75px;
+    border: none;
+    background-color: white;
 }
 
