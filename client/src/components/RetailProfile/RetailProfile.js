@@ -82,27 +82,29 @@ function RetailProfile({email, password, companyName, open, address, city, state
                         <h5 className="retail-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" className="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
-                        <button type="button" className="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
+
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                    <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
                     <div className="col-sm-12">
-                        <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Email Address: <input className="form form-inputs" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Password: <input className="form form-inputs" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Company Name: <input className="form form-inputs" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Currently Opened: <i id='open' className={open ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Address: <input type="text" className="form" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Address: <input type="text" className="form form-inputs" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>City: <input type="text" className="form" id="city" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>City: <input type="text" className="form form-inputs" id="city" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>State: <input type="text" className="form" id="state" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>State: <input type="text" className="form form-inputs" id="state" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Zip Code: <input type="text" className="form" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Zip Code: <input type="text" className="form form-inputs" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Masks: <i id="masks" className={masks ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>

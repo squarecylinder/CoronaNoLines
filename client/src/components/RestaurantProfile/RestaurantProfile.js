@@ -96,27 +96,29 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <h5 className="rest-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" className="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
-                        <button type="button" className="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                    <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
-                    <div className="col-sm-12">
-                        <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
+                    <div className="col">
+                        <h6>Email Address: <input className="form form-inputs" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
+
                         <hr></hr>
-                        <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Password: <input className="form form-inputs" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Company Name: <input className="form" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Company Name: <input className="form form-inputs" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Currently Opened: <i id='open' className={open ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Address <input className="form" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Address: <input className="form form-inputs" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>City <input className="form" type="text" id="city" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>City: <input className="form form-inputs" type="text" id="city" placeholder={city} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>State <input className="form" type="text" id="state" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>State: <input className="form form-inputs" type="text" id="state" placeholder={state} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Zip Code: <input className="form" type="text" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Zip Code: <input className="form form-inputs" type="text" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Masks: <i id ='masks' className={masks ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
@@ -124,7 +126,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <hr></hr>
                         <h6>Dine In: <i id='dineIn' className={dineIn ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Tables: <input className="form" type="number" id="tables" placeholder={tables} disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Tables: <input className="form form-inputs-tables table-width" type="number" id="tables" placeholder={tables} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Outside Dining: <i id='outsideDining' className={outsideDining ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
@@ -138,9 +140,9 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                 <div>
                 <img src={Logo} alt="placeholder" className="img-fluid"></img>
                 </div>
-            <button type="button" className="btn btn-primary btn-lg btn-block social-btn">Update Facebook Profile</button>
-            <button type="button" className="btn btn-info btn-lg btn-block social-btn">Send a Tweet</button>
-            <h6 className="social-media">Keep your social media accounts up to date by linking your WIP account page every time you make a change.</h6>
+            <button type="button" class="btn btn-primary btn-lg btn-block social-btn">Update Facebook Profile</button>
+<button type="button" class="btn btn-info btn-lg btn-block social-btn">Send a Tweet</button>
+<h6 class="social-media">Keep your social media accounts up to date by linking your Corona No Lines account page every time you make a change.</h6>
             </div>
             </div>
 
