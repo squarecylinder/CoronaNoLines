@@ -1,23 +1,28 @@
 import React from 'react';
 import './restaurant.css';
 import {GoogleMap, LoadScript} from '@react-google-maps/api';
+import axios from 'axios'
 
 const containerStyle = {
   width: '400px',
   height: '400px'
 };
  
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
- 
+
 //Need to dynamically inject fields from MongoDb
 function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOut, driveThru, open, masks, userCreated, handleBtnClick}) {
   const [map, setMap] = React.useState(null)
+  const [center, setCenter] = React.useState({ lat: null, lng: null })
  
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8")
+    .then(res => {
+      setCenter({ lat: res.data.results[0].geometry.location.lat, lng: res.data.results[0].geometry.location.lng, })
+      const myLatLng = new window.google.maps.LatLng(res.data.results[0].geometry.location.lat, res.data.results[0].geometry.location.lng)
+      const marker = new window.google.maps.Marker({ position: myLatLng, title: companyName })
+      marker.setMap(map)
+    })
     map.fitBounds(bounds);
     setMap(map)
   }, [])

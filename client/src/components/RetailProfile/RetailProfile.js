@@ -8,6 +8,7 @@ import API from '../../utils/API'
 
 function RetailProfile({email, password, companyName, open, address, city, state, zip , masks, curbside}) {
     // const [edit, setEdit] = useState(false);
+    let deleteCount = 0;
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
 
@@ -17,7 +18,16 @@ function RetailProfile({email, password, companyName, open, address, city, state
     }
     function handleEditClick() {
         handleDisable()
+    } 
+    function handleDelete() {
+        console.log(deleteCount)
+        if (deleteCount === 1){(API.Remove()).then(alert("Deleting Account..."), window.location = '/home')
+        }
+        if (deleteCount === 0){
+        deleteCount++
+        alert('Are you sure you want to delete your account?')
     }
+}
     function handleChange(e) {
         if (e.target.className === 'fa fa-check') {
             e.target.className = 'fa fa-times'
@@ -83,7 +93,7 @@ function RetailProfile({email, password, companyName, open, address, city, state
                     </div>
                     <div className="col-7">
 
-                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn" onClick={handleDelete}>Delete Profile</button>
                     <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
                     <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>

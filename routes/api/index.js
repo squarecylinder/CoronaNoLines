@@ -5,5 +5,7 @@ module.exports = {
     retail: require("./retail"),
     users: require("./users"),
     sessioncheck: require("./sessioncheck"),
-    update: require("./update")
+    update: require("./update"),
+    remove: require("./remove"),
+    logout: require("./logout")
   };

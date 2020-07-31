@@ -19,6 +19,12 @@ Update: (UpdateData) => {
     console.log(UpdateData)
     return axios.put('/api/update' , UpdateData)
 },
+Remove: () => {
+    return axios.get('/api/remove')
+},
+Logout: () => {
+    return axios.get('/api/logout')
+},
 
 GetRestaurant: () => {
     return axios.get("/api/restaurant").then((res) => {

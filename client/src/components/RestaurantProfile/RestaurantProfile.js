@@ -6,6 +6,7 @@ import moment from 'moment';
 
 function RestaurantProfile({email, password, companyName, open, address, city, state, zip , masks, curbside, driveThru, dineIn, tables, outsideDining, takeOut}) {
     const [edit, setEdit] = useState(false);
+    let deleteCount = 0;
     const Now = moment().format('MMMM Do YYYY');
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
@@ -18,6 +19,13 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         setEdit(true)
         handleDisable()
     }
+    function handleDelete() {
+        console.log(deleteCount)
+        
+        let deleteButton = prompt('Enter your password to delete your account');
+        if (deleteButton === password){(API.Remove()).then(alert("Deleting Account..."), window.location = '/home')
+    }
+}
     function handleChange(e) {
         if (e.target.className === 'fa fa-check') {
             e.target.className = 'fa fa-times'
@@ -96,7 +104,7 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <h5 className="rest-name">{companyName}</h5>
                     </div>
                     <div className="col-7">
-                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn" onClick={handleDelete}>Delete Profile</button>
                     <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
                     <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>

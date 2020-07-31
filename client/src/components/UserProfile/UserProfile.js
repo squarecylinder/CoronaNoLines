@@ -4,6 +4,7 @@ import Logo from '../../assets/images/logo-placeholder.jpg'
 import API from '../../utils/API';
 
 function UserProfile({email, password }) {
+    let deleteCount= 0;
     // const [edit, setEdit] = useState(false);
     function handleDisable() {
         var cls = document.getElementsByClassName('form');
@@ -11,6 +12,15 @@ function UserProfile({email, password }) {
         for(var i = 0; i < cls.length; i++) {
         cls[i].removeAttribute('disabled');
         }
+    }
+    function handleDelete() {
+        console.log(deleteCount)
+        if (deleteCount === 1){(API.Remove()).then(alert("Deleting Account..."), window.location = '/home')
+        }
+        if (deleteCount === 0){
+        deleteCount++
+        alert('Are you sure you want to delete your account?')
+    }
     }
     function handleEditClick() {
         // setEdit(true)
@@ -38,7 +48,7 @@ function UserProfile({email, password }) {
                         <h5 className="user-name">Account Information</h5>
                     </div>
                     <div className="col-7">
-                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn" onClick={handleDelete}>Delete Profile</button>
                     <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
                     <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>

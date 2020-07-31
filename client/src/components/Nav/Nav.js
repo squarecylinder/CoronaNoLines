@@ -23,6 +23,9 @@ function Nav() {
     API.PostLogin({ username: username, password: password }).then(alert("You have been successfully logged in " + username))
       .then(() => window.location = ('/accountpage/' + username))
   }
+  function handleLogout() {
+    API.Logout().then(() => window.location = '/home');
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
@@ -33,9 +36,10 @@ function Nav() {
         </ul>
 
         <ul className="nav navbar-nav ml-auto">
+        {!isLoggedIn ?
           <li className="nav-item">
             <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle bg-dark login-nav-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <button className="btn btn-secondary dropdown-toggle bg-dark login-nav-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span className="fa fa-sign-in"></span> Sign In</button>
               <div className="dropdown-menu">
                 <form onSubmit={handleLoginSubmit} className="px-4 py-3">
@@ -52,8 +56,10 @@ function Nav() {
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href="/signup">New to the page? Sign up</a>
               </div>
-            </div>
+            </div> 
           </li>
+           : <li><button className="btn btn-secondary  bg-dark logout-nav-btn" type="button" onClick={handleLogout}>
+                <span className="fa fa-sign-out"></span>Logout</button> </li> }
 
           <li className="nav-item">
             <a className="nav-link" href="/signup"><span className="fa fa-user"></span> Sign Up</a>
