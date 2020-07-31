@@ -7,10 +7,6 @@ const containerStyle = {
   height: '400px'
 };
  
-// const center = {
-//   lat: -3.745,
-//   lng: -38.523
-// };
 
 //Need to dynamically inject fields from MongoDb
 function Retail({companyName, address, open, masks, curbside, handleRetailBtnClick, userCreated}) {
@@ -20,11 +16,13 @@ function Retail({companyName, address, open, masks, curbside, handleRetailBtnCli
  
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
-    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + {address} + "&key=AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8")
-    .then(res =>{ console.log(res.data.results, {address})
-    setCenter({lat: res.data.results[0].geometry.location.lat, lng: res.data.results[0].geometry.location.lng })})
+    axios.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8")
+    .then(res => {
+    setCenter({lat: res.data.results[0].geometry.location.lat, lng: res.data.results[0].geometry.location.lng, })
+    const myLatLng = new window.google.maps.LatLng(res.data.results[0].geometry.location.lat, res.data.results[0].geometry.location.lng)
+    const marker = new window.google.maps.Marker({position: myLatLng, title: companyName})
+    marker.setMap(map)})
     map.fitBounds(bounds);
-    setMap(map)
   }, [])
  
   const onUnmount = React.useCallback(function callback(map) {
@@ -51,7 +49,6 @@ function Retail({companyName, address, open, masks, curbside, handleRetailBtnCli
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
