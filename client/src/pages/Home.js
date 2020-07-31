@@ -147,26 +147,6 @@ function Home(){
                 {restaurantcards}
                 </div>
                 </LoadScript>
-                {/* <LoginCard /> */}  {/*
-                <Retail companyName={retail.companyName}
-                address={retail.address}
-                open={retail.open}
-                curbside={retail.curbside}
-                masks={retail.masks}
-                handleRetailBtnClick={handleRetailBtnClick}
-                userCreated={retail.userCreated}
-                />
-                <Restaurant companyName={restaurant.companyName}
-                address={restaurant.address}
-                dineIn={restaurant.dineIn} 
-                tables={restaurant.tables}
-                outsideDining={restaurant.outsideDining} 
-                takeOut={restaurant.takeOut} 
-                driveThru={restaurant.driveThru}
-                open={restaurant.open} 
-                masks={restaurant.masks}
-                userCreated={restaurant.userCreated}
-                handleBtnClick={handleBtnClick} />  */}
              </div>
              {/* <MapContainer />  */}
         </div>

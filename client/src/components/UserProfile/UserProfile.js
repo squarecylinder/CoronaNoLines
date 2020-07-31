@@ -38,15 +38,16 @@ function UserProfile({email, password }) {
                         <h5 className="user-name">Account Information</h5>
                     </div>
                     <div className="col-7">
-                        <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
-                        <button type="button" class="btn btn-danger btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
+                    <button type="button" class="btn btn-danger btn-sm float-right delete-btn">Delete Profile</button>
+                    <button type="button" class="btn btn-success btn-sm float-right save-btn" onClick={handleSaveClick}>Save Profile</button>
+                    <button type="button" class="btn btn-info btn-sm float-right edit-btn" onClick={handleEditClick}>Edit Profile </button>
                     </div>
                 </div>
                 <div className="row categories">
-                    <div className="col-3">
-                        <h6>Email Address: <input className="form" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
+                    <div className="col">
+                        <h6>Email Address: <input className="form form-inputs" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Password: <input className="form" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
+                        <h6>Password: <input className="form form-inputs" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         
                     </div>
                 </div>

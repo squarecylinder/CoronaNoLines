@@ -26,6 +26,12 @@
     margin-top: 3px; 
 }
 
+.delete-btn {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+
 .categories {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -41,3 +47,10 @@
 .social-btn {
     font-size: 12pt;
 }
+
+.form-inputs {
+    border: none;
+    background-color: white;
+}
+
+
