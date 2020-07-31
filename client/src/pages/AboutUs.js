@@ -26,13 +26,13 @@ function AboutUs() {
             <h6 className="names">Jalen Straka</h6>
             <ul>
               <li>
-                email@email.com
+                jalenastraka@gmail.com
               </li>
             </ul>
             <h6 className="names">Jesse Hauck</h6>
             <ul>
               <li>
-                email@email.com
+                jhauck56@gmail.com
               </li>
             </ul>
 

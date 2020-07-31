@@ -18,6 +18,15 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         setEdit(true)
         handleDisable()
     }
+    function handleChange(e) {
+        if (e.target.className === 'fa fa-check') {
+            e.target.className = 'fa fa-times'
+            e.target.value = false
+        } else {
+            e.target.className = 'fa fa-check'
+            e.target.value = true
+        }
+    }
     function handleSaveClick() {
         let updatedEmail = document.getElementById('email').value;
         let updatedPassword = document.getElementById('password').value;
@@ -27,9 +36,13 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
         let updatedState = document.getElementById('state').value;
         let updatedZip = document.getElementById('zip').value;
         let updatedTables = document.getElementById('tables').value;
-        // let updatedCurbside = document.getElementById('curbside').value;
-        // let updatedOpen = document.getElementById('open').value;
-        // let updatedMasks = document.getElementById('masks').value;
+        let updatedCurbside = document.getElementById('curbside').value;
+        let updatedOpen = document.getElementById('open').value;
+        let updatedMasks = document.getElementById('masks').value;
+        let updatedDineIn = document.getElementById('dineIn').value;
+        let updatedOutsideDining = document.getElementById('outsideDining').value;
+        let updatedDriveThru = document.getElementById('driveThru').value;
+        let updatedTakeOut = document.getElementById('takeOut').value;
         if(updatedEmail === "") {
             updatedEmail = email;
         }
@@ -63,10 +76,14 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
             state: updatedState,
             zip: updatedZip,
             tables: updatedTables,
-            userCreated: Now
-            // curbside: updatedCurbside,
-            // open: updatedOpen, 
-            // masks: updatedMasks
+            userCreated: Now,
+            curbside: updatedCurbside,
+            open: updatedOpen, 
+            masks: updatedMasks,
+            dineIn: updatedDineIn,
+            outsideDining: updatedOutsideDining,
+            driveThru: updatedDriveThru,
+            takeOut: updatedTakeOut
         }).then(alert("Saving..."), window.location.reload())
     }
 
@@ -87,12 +104,13 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                 <div className="row categories">
                     <div className="col">
                         <h6>Email Address: <input className="form form-inputs" type="text" id="email" placeholder={email} disabled onChange={e => (e.target.value)}/></h6>
+
                         <hr></hr>
                         <h6>Password: <input className="form form-inputs" type="text" id="password" placeholder="*****" disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
                         <h6>Company Name: <input className="form form-inputs" type="text" id="companyName" placeholder={companyName} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Currently Opened: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Currently Opened: <i id='open' className={open ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
                         <h6>Address: <input className="form form-inputs" type="text" id="address" placeholder={address} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
@@ -102,19 +120,19 @@ function RestaurantProfile({email, password, companyName, open, address, city, s
                         <hr></hr>
                         <h6>Zip Code: <input className="form form-inputs" type="text" id="zip" placeholder={zip} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Masks: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Masks: <i id ='masks' className={masks ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Curbside: <i className={curbside ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Curbside: <i id='curbside' className={curbside ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Dine In: <i className={dineIn ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Dine In: <i id='dineIn' className={dineIn ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
                         <h6>Tables: <input className="form form-inputs-tables table-width" type="number" id="tables" placeholder={tables} disabled onChange={e => (e.target.value)}/></h6>
                         <hr></hr>
-                        <h6>Outside Dining: <i className={outsideDining ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Outside Dining: <i id='outsideDining' className={outsideDining ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Drive-Thru: <i className={driveThru ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Drive-Thru: <i id='driveThru' className={driveThru ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                         <hr></hr>
-                        <h6>Takeout: <i className={takeOut ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+                        <h6>Takeout: <i id='takeOut' className={takeOut ? 'fa fa-check' : 'fa fa-times'} onClick={handleChange}></i></h6>
                     </div>
                 </div>
             </div>
