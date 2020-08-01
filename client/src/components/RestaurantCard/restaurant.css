@@ -1,6 +1,7 @@
 #restaurant-card {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-right: 15px;
     }
     
     .restaurant-header {
@@ -16,6 +17,10 @@
     .card-list {
         color: #343a40;
     }
+
+    .list-item-address {
+        margin-top: 15px;
+    }    
 
     .scroll-btn {
         margin-right: auto;
@@ -39,3 +44,12 @@
     .fa-times {
         color: red;
     }
+
+    .list-item-rest {
+        margin-top: 15px;
+        background-color: #f3f3f3;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 10px;
+    }
+    

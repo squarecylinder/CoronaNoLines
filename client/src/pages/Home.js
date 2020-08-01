@@ -140,12 +140,8 @@ function Home(){
             <LoadScript
       googleMapsApiKey="AIzaSyBWs77OPf3_03s5yGD-UtwXeR5B5q9TuF8"
     >
-                <div>
                 {retailcards}
-                </div>
-                <div>
                 {restaurantcards}
-                </div>
                 </LoadScript>
              </div>
              {/* <MapContainer />  */}

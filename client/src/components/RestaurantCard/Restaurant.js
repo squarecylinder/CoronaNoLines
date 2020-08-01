@@ -9,7 +9,6 @@ const containerStyle = {
 };
  
 
-//Need to dynamically inject fields from MongoDb
 function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOut, driveThru, open, masks, userCreated, handleBtnClick}) {
   const [map, setMap] = React.useState(null)
   const [center, setCenter] = React.useState({ lat: null, lng: null })
@@ -32,27 +31,10 @@ function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOu
   }, [])
   
   return (
-    <div className="col-12" id="restaurant-card">
-<div className="card">
+<div className="card" id="restaurant-card">
   <h5 className="card-header restaurant-header">{companyName}</h5>
   <div className="card-body card-list">
-    <h6>Address: {address} </h6>
-    <h6>Open: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    <h6>Allowing dine-In: <i className={dineIn ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    <h6>Amount of tables: {tables}</h6>
-    <h6>Open patio: <i className={outsideDining ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    <h6>Open drive-thru: <i className={driveThru ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    <h6>Order take-out: <i className={takeOut ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    <h6>Masks required: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
-    </div>
-    <div className="scroll-btn">
-      {/*
-    <button onClick={handleBtnClick} className="btn btn-info back-btn" data-value="back">Previous Restaurant</button>
-    <button onClick={handleBtnClick} className="btn btn-success next-btn" data-value="next">Next Restaurant</button>
-      */}
-  </div>
-
-      <GoogleMap
+  <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
         zoom={10}
@@ -62,11 +44,18 @@ function Restaurant({companyName, address, dineIn, tables, outsideDining, takeOu
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
-   
+    <h6 className="list-item-rest">Address: {address} </h6>
+    <h6 className="list-item-rest">Open: <i className={open ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6 className="list-item-rest">Allowing dine-In: <i className={dineIn ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6 className="list-item-rest">Amount of tables: {tables}</h6>
+    <h6 className="list-item-rest">Open patio: <i className={outsideDining ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6 className="list-item-rest">Open drive-thru: <i className={driveThru ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6 className="list-item-rest">Order take-out: <i className={takeOut ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    <h6 className="list-item-rest">Masks required: <i className={masks ? 'fa fa-check' : 'fa fa-times'}></i></h6>
+    </div>   
   <div className="card-footer restaurant-footer">
     Last updated: {userCreated}
   </div>
-</div>
 </div>
 
   );

@@ -6,7 +6,7 @@ function Footer() {
   return (
       <div>
 <div className="footer">
-<p>Website Footer Content</p>
+<p>Copyright &copy; 2020 Corona No Lines  </p>
 </div>
 </div>
 );
