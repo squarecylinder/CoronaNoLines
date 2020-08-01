@@ -1,8 +1,9 @@
 .footer {
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color:#343a40;
-    color: white;
+    color: #666;
     text-align: center;
-    height: 30px;
-
+    height:45px
+    
 }
