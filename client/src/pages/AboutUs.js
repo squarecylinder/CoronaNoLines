@@ -46,7 +46,7 @@ function AboutUs() {
             <h6 className="names">ChinShin Chao</h6>
             <ul>
               <li>
-                email@email.com
+                Chaochinshin@gmail.com
               </li>
             </ul>
 
